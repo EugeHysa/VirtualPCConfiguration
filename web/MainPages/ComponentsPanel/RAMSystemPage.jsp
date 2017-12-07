@@ -98,7 +98,10 @@
                 <!--    <a href="javascript: document.getElementById('cpuField').value; document.getElementById('cpuPrice').value; document.getElementById('form').submit();"> <input type="button" value="Previous"></a> -->
                 </fieldset>
             </div>
-            <div class="footer"> <input type="button" value="Admin_Mode" name="Admin_Mode" onclick="location.href='../../indexadmin.jsp'"/></div>
+            <div class="footer">
+                <input type="button" value="Admin_Mode" name="Admin_Mode" onclick="location.href='../../indexadmin.jsp'"/>
+                <input type="button" value="Restart" name="RestartConfig" onclick="location.href='../../index.html'"/>
+            </div>
         </div>
     </body>
 </html>

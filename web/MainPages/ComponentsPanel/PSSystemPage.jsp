@@ -109,7 +109,10 @@
                     <a href="javascript:history.go(-1)" onMouseOver="self.status.referrer; return true;"><input type="button" value="Previous"></a>
                 </fieldset>     
             </div>
-            <div class="footer"> <input type="button" value="Admin_Mode" name="Admin_Mode" onclick="location.href='../../indexadmin.jsp'"/></div>
+            <div class="footer">
+                <input type="button" value="Admin_Mode" name="Admin_Mode" onclick="location.href='../../indexadmin.jsp'"/>
+                <input type="button" value="Restart" name="RestartConfig" onclick="location.href='../../index.html'"/>
+            </div>
         </div>
     </body>
 </html>
