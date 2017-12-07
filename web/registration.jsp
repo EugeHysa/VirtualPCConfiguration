@@ -4,6 +4,9 @@
     String user = request.getParameter("uname");    
     String pwd = request.getParameter("pass");
     Class.forName("com.mysql.jdbc.Driver");
+    /*JAMES "root", "12345");*/
+    /*ANTONINO "root", "Prove");*/
+    /*GIOVANNA "root", "Giovanna26");*/
     Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/virtualconfiguration","root", "12345");
     Statement st = con.createStatement();
     

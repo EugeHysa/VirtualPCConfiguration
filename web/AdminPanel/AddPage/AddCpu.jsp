@@ -7,7 +7,6 @@
 <head>
     <meta http-equiv="refresh" content="0; url=../CompPage/CpuPage.jsp" />
 </head>
-
 <%
     //legge i valori ricevuti dal form HTML
     String Stringa1 = new String (request.getParameter("brand"));

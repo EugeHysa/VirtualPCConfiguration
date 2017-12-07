@@ -43,13 +43,13 @@
             <div class="content">
                 <!-- Progressbar -->
                 <ul id="progressbar">
-                    <li id="active3">Motherboard</li>
-                    <li id="active2">Cpu</li>
-                    <li id="active1">Ram</li>
-                    <li id="active4">Graphic Card</li>
-                    <li id="active5">Hard Disk</li>
-                    <li id="active6">Power Supply</li>
-                    <li id="active7">Case</li>
+                    <li>Motherboard</li>
+                    <li>Cpu</li>
+                    <li>Ram</li>
+                    <li id="active1">Graphic Card</li>
+                    <li>Hard Disk</li>
+                    <li>Power Supply</li>
+                    <li>Case</li>
                 </ul>
                 <!-- Fieldsets -->
                 <fieldset id="first">

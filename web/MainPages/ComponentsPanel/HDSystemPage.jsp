@@ -43,13 +43,13 @@
             <div class="content">
                 <!-- Progressbar -->
                 <ul id="progressbar">
-                    <li id="active3">Motherboard</li>
-                    <li id="active2">Cpu</li>
-                    <li id="active1">Ram</li>
-                    <li id="active4">Graphic Card</li>
-                    <li id="active5">Hard Disk</li>
-                    <li id="active6">Power Supply</li>
-                    <li id="active7">Case</li>
+                    <li>Motherboard</li>
+                    <li>Cpu</li>
+                    <li>Ram</li>
+                    <li>Graphic Card</li>
+                    <li id="active1">Hard Disk</li>
+                    <li>Power Supply</li>
+                    <li>Case</li>
                 </ul>
                 <!-- Fieldsets -->
                 <fieldset id="first">
@@ -60,7 +60,7 @@
                 <form action="PSSystemPage.jsp" method="POST">
                     <input type="hidden" id="HDBRAND" name = "HDBRAND"/>
                     <input type="hidden" id="HDMODEL" name = "HDMODEL"/>
-                    <input type="hidden"   id="HDPRICE" name = "HDPRICE"/>
+                    <input type="hidden" id="HDPRICE" name = "HDPRICE"/>
                     <input type="hidden" value="<%out.print(request.getParameter("mbbrand2"));%>" id="mbbrand3" name="mbbrand3">
                     <input type="hidden" value="<%out.print(request.getParameter("mbmodel2"));%>" id="mbmodel3" name="mbmodel3">
                     <input type="hidden" value="<%out.print(request.getParameter("mbprice2"));%>" id="mbprice3" name="mbprice3">

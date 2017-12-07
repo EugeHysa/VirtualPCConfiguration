@@ -100,6 +100,7 @@ label {
     color: #D9853B;
 }
 .hidden { display: none; }
+
 #progressbar{
     margin:0;
     padding:0;
@@ -108,6 +109,7 @@ label {
 #active1{
     color: #D9853B;
 }
+
 fieldset{
     display:none;
     width: 350px;
@@ -134,12 +136,6 @@ input[type=submit],input[type=button]{
     border:none;
     border-radius:4px;
     color:#fff;
-    font-family:'Droid Serif',serif;
-}
-li{
-    margin-right:52px;
-    display:inline;
-    color: #74AFAD;
     font-family:'Droid Serif',serif;
 }
 a:link, a:visited{

@@ -41,13 +41,13 @@
             <div class="content">
                 <!-- Progressbar -->
                 <ul id="progressbar">
-                    <li id="active1">Motherboard</li>
-                    <li id="active2">Cpu</li>
-                    <li id="active3">Ram</li>
-                    <li id="active4">Graphic Card</li>
-                    <li id="active5">Hard Disk</li>
-                    <li id="active6">Power Supply</li>
-                    <li id="active7">Case</li>
+                    <li>Motherboard</li>
+                    <li id="active1">Cpu</li>
+                    <li>Ram</li>
+                    <li>Graphic Card</li>
+                    <li>Hard Disk</li>
+                    <li>Power Supply</li>
+                    <li>Case</li>
                 </ul>                   
                 <fieldset id="first">
                 <!-- Loading CPU components in a table-->
