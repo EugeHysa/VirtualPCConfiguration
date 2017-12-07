@@ -78,7 +78,6 @@
                 </form> 
                 <form action="HDSystemPage.jsp" method="POST">
                     <input type="hidden" id="returncpu" value="<%out.print(request.getParameter("cpuField"));%>">
-                    <input type="submit" value="Previous"> 
                 </form> 
                 <script>
                     var psIndex;
