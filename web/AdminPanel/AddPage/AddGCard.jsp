@@ -9,7 +9,6 @@
 </head>
 <%
     //legge i valori ricevuti dal form HTML
-    Integer int1 = new Integer(request.getParameter("cod"));
     String Stringa1 = new String (request.getParameter("brand"));
     String Stringa2 = new String (request.getParameter("model"));
     String Stringa3 = new String (request.getParameter("series"));
@@ -29,7 +28,7 @@
         DBConnection db = new DBConnection();
         GCardLoader gc = new GCardLoader();
         db.Connect();
-        db.filldbGCard(int1, Stringa1, Stringa2, Stringa3, Stringa4, int2, db1, int3, int4, db2); 
+        db.filldbGCard(Stringa1, Stringa2, Stringa3, Stringa4, int2, db1, int3, int4, db2); 
     }
     catch(SQLException ex){
         out.println("Connessione fallita.");

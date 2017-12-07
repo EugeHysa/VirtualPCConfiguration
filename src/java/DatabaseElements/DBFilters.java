@@ -46,7 +46,7 @@ public class DBFilters extends DBConnection {
         res = stmt.executeQuery("select R1.*\n" + "from MOTHERBOARD M1, RAM R1\n" + "where M1.RAM_TYPE=R1.SPEED and M1.BRAND = '"+selectedBrand+"' and M1.MODEL = '"+selectedModel+"'\n");
         while(res.next())
             {
-                r.fillLoader(res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getInt(6), res.getInt(7), res.getInt(8), res.getInt(9), res.getDouble(10));
+                r.fillLoader(res.getInt(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getInt(6), res.getInt(7), res.getInt(8), res.getInt(9), res.getDouble(10));
             }
         return r;
     }

@@ -10,8 +10,6 @@
 
 <%
     //legge i valori ricevuti dal form HTML
-    String str1 = new String (request.getParameter("cod"));
-    int int1 = Integer.parseInt(str1);
     String Stringa1 = new String (request.getParameter("brand"));
     String Stringa2 = new String (request.getParameter("model"));
     String Stringa3 = new String (request.getParameter("socket"));
@@ -28,7 +26,7 @@
         DBConnection db = new DBConnection();
         CPULoader cp = new CPULoader();
         db.Connect();
-        db.filldbCPU(int1, Stringa1, Stringa2, Stringa3, db1, int2, int3, db2);
+        db.filldbCPU(Stringa1, Stringa2, Stringa3, db1, int2, int3, db2);
     }
     catch(SQLException ex){
         out.println("Connessione fallita.");

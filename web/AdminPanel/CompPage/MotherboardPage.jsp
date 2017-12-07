@@ -37,10 +37,6 @@
                 <form action="../AddPage/AddMotherboard.jsp" method="post">
                 <table id="insertTable" border="0">
                     <tr>
-                        <td>Cod:</td>
-                        <td><input type="text" name="cod"></td>
-                    </tr>
-                    <tr>
                         <td>Brand:</td>
                         <td><input type="text" name="brand"></td>
                     </tr>

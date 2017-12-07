@@ -1,19 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Components;
-
-/**
- *
- * @author Utente
- */
 import java.util.ArrayList;
 
-
 public class CaseLoader {
-    
+    private ArrayList<Integer> cods = new ArrayList<>();
     private ArrayList<String> brands = new ArrayList<>();
     private ArrayList<String> models = new ArrayList<>();
     private ArrayList<String> types = new ArrayList<>();
@@ -23,8 +12,9 @@ public class CaseLoader {
     private ArrayList<Double> prices = new ArrayList<>();
     private int noe;
      
-    public void fillLoader(String brand, String model, String type, String color, String motherboard_compatibili, Double max_hdrive_lenght, Double price)
+    public void fillLoader(int cod, String brand, String model, String type, String color, String motherboard_compatibili, Double max_hdrive_lenght, Double price)
     {
+        cods.add(cod);
         brands.add(brand);
         models.add(model);
         types.add(type);
@@ -37,6 +27,7 @@ public class CaseLoader {
     
     public void cleanAll()
     {
+        cods.clear();
         brands.clear();
         models.clear();
         types.clear();
@@ -47,7 +38,11 @@ public class CaseLoader {
         noe = 0;
     }
     
-        
+    public ArrayList<Integer> listCods()
+    {
+        return cods;
+    }
+    
     public ArrayList<String> listBrands()
     {
         return brands;
@@ -87,21 +82,13 @@ public class CaseLoader {
     {
         return noe;
     }
-    
-    
+
     public void printAll()
     {
         System.out.println(noe);
         for(int i = 0; i < noe; i++)
         {
-            
-            System.out.println(brands.get(i) + " " +models.get(i) +" " + types.get(i) + " " + colors.get(i) + " " + mb_comp.get(i) + " " + max_hd_len.get(i) + " "+prices.get(i));
-            
+            System.out.println(cods.get(i) + " " +brands.get(i) + " " +models.get(i) +" " + types.get(i) + " " + colors.get(i) + " " + mb_comp.get(i) + " " + max_hd_len.get(i) + " "+prices.get(i)); 
         }
     }
-    
-    
-    
-    
 }
-

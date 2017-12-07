@@ -9,6 +9,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="./../../CSStyles/BuildSystemStyle.css">
+        <link rel="icon" href="./../../CSStyles/projectIcon.png" type="image/png"/>
         <title>V I R T U A L</title>
     </head>
     <body>

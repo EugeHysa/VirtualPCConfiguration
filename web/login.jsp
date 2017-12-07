@@ -13,7 +13,7 @@
         session.setAttribute("userid", userid);
         out.println("welcome " + userid);
         out.println("<a href='logout.jsp'>Log out</a>");
-        response.sendRedirect("./MainPages/ComponentsPanel/MBSystemPage.jsp");
+        %><html><body onload="<script>if(!localStorage.reload) {setTimeout("document.location.reload()",2000);localStorage.reload = 1;}</script></body></html><%
     } else {
         out.println("Invalid password <a href='CustomerLogin.jsp'>try again</a>");
     }

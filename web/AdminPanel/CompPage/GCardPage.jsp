@@ -36,10 +36,6 @@
                     <form action="../AddPage/AddGCard.jsp" method="post">
                     <table id="insertTable" border="0">
                         <tr>
-                            <td>Cod:</td>
-                            <td><input type="text" name="cod"></td>
-                        </tr>
-                        <tr>
                             <td>Brand:</td>
                             <td><input type="text" name="brand"></td>
                         </tr>
@@ -75,7 +71,6 @@
                             <td>Price:</td>
                             <td><input type="text" name="price"></td>
                         </tr>
-                        <tr>		
                         <tr>
                             <td><input type="submit" value="Aggiungi"></td>
                         </tr>

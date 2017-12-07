@@ -30,37 +30,7 @@
                 <p>Component Table:</p>
                 <%
                     out.print(new HTMLTableCreator().createPS(true));
-                %> 
-						<script>
-                    var ramIndex;
-                    var tableRAM = document.getElementById("table7");
-                    // get selected row
-                    // display selected row data in text input        
-                    for(var i = 1; i < tableRAM.rows.length; i++)
-                    {
-                        tableRAM.rows[i].onclick = function()
-                        {
-                            //Remove the previous selected row
-                            if (typeof ramIndex !== "undefined"){
-                                tableRAM.rows[ramIndex].classList.toggle("selected");
-                            }
-                            //Get the selected row index
-                            ramIndex = this.rowIndex;
-                            //Add class to the selected row
-                            this.classList.toggle("selected");
-                            document.getElementById("caseField").value = this.cells[0].innerHTML + " " + this.cells[1].innerHTML;
-                            
-                           // document.getElementById("RAMBRAND").value = this.cells[0].innerHTML;
-                           // document.getElementById("RAMMODEL").value = this.cells[1].innerHTML;
-                           // document.getElementById("RAMPRICE").value = this.cells[8].innerHTML; 
-                            
-                           // document.getElementById("rampriceField").value = document.getElementById("ramPrice").value;
-                           // document.getElementById("rampriceField").value = parseFloat(document.getElementById("rampriceField").value) + parseFloat(this.cells[8].innerHTML);
-                           // document.getElementBYId("RAMPRICE").value = document.getElementById("ramPrice").value;
-                         };
-                    }
-                    </script>
-            </fieldset>	
+                %>	
 		<div class="insidebar">
                     <p>Add Component:</p>
                     <form action="../AddPage/AddPS.jsp" method="post">
@@ -107,4 +77,3 @@
         </div>
     </body>
 </html>
-

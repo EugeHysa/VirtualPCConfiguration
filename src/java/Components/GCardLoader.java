@@ -1,16 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Components;
-
 import java.util.ArrayList;
 
-/**
- *
- * @author user
- */
 public class GCardLoader {
     private ArrayList<Integer> cods = new ArrayList<>();
     private ArrayList<String> brands = new ArrayList<>();
@@ -53,6 +43,11 @@ public class GCardLoader {
         length.clear();
         prices.clear();
         noe = 0;
+    }
+    
+    public ArrayList<Integer> listCods()
+    {
+        return cods;
     }
     
     public ArrayList<String> listBrands()
@@ -100,19 +95,13 @@ public class GCardLoader {
     {
         return noe;
     }
-    
-    
+     
     public void printAll()
     {
         System.out.println(noe);
         for(int i = 0; i < noe; i++)
         {
-            
-            System.out.println(cods.get(i)+ " " + brands.get(i) + " " +models.get(i) +" " + series.get(i) + " " + chipsets.get(i) + " " + memory.get(i) + " " + clocks.get(i) + " " + tdps.get(i) + " " + length.get(i) +  " " + prices.get(i));
-            
+            System.out.println(cods.get(i)+ " " + brands.get(i) + " " +models.get(i) +" " + series.get(i) + " " + chipsets.get(i) + " " + memory.get(i) + " " + clocks.get(i) + " " + tdps.get(i) + " " + length.get(i) +  " " + prices.get(i));   
         }
     }
-    
-    
-    
 }

@@ -132,7 +132,7 @@ public class HTMLTableCreator {
             db.closeall();
         }
         catch(SQLException ex){
-            ss.append("Eccezione SQL.");
+            ss.append("Eccezione SQL. GNE");
         }	
 
         output = ss.toString();

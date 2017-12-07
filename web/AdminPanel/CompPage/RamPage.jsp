@@ -29,12 +29,12 @@
             <div class="content">
                 <p>Component Table:</p>
                 <%
-                    out.println(new HTMLTableCreator().RAMTableCreator(true, "",""));
+                    out.println(new HTMLTableCreator().RAMTableCreator(true, "", ""));
                 %>
             </div>
             <div class="insidebar">
                 <p>Add Component:</p>
-                <form action="../AddPage/AddCpu.jsp" method="post">
+                <form action="../AddPage/AddRam.jsp" method="post">
                     <table id="insertTable" border="0">
                         <tr>
                             <td>Brand:</td>

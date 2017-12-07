@@ -1,16 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Components;
-
 import java.util.ArrayList;
 
-/**
- *
- * @author user
- */
 public class CPULoader {
     private ArrayList<Integer> cods = new ArrayList<>();
     private ArrayList<String> brands = new ArrayList<>();
@@ -21,8 +11,7 @@ public class CPULoader {
     private ArrayList<Integer> tdps = new ArrayList<>();
     private ArrayList<Double> prices = new ArrayList<>();
     private int noe;
-    
-    
+      
     public void fillLoader(int cod, String brand, String model, String socket, Double frequency, int core, int tdp, Double price)
     {
         cods.add(cod);
@@ -48,9 +37,6 @@ public class CPULoader {
         prices.clear();
         noe = 0;
     }
-    
-   
-    
     
     public ArrayList<String> listBrands()
     {
@@ -81,8 +67,7 @@ public class CPULoader {
     {
         return tdps;
     }
-   
-    
+  
     public ArrayList<Double> listPrices()
     {
         return prices;
@@ -97,19 +82,13 @@ public class CPULoader {
     {
         return noe;
     }
-    
-    
+
     public void printAll()
     {
         System.out.println(noe);
         for(int i = 0; i < noe; i++)
         {
-            
             System.out.println(cods.get(i)+ " " + brands.get(i) + " " +models.get(i) +" " + sockets.get(i) + " " + frequencies.get(i) + " " + cores.get(i) + " " + tdps.get(i) + " "+prices.get(i));
-            
         }
     }
-    
-    
-    
 }

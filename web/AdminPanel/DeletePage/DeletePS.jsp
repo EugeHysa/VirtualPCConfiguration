@@ -11,12 +11,12 @@
         <meta http-equiv="refresh" content="0; url=../CompPage/PowerSupplyPage.jsp" />
     </head>
     <%
-        String st1 = new String(request.getParameter("brand_delete"));
-        String st2 = new String(request.getParameter("model_delete"));
+        String st1 = new String(request.getParameter("deletecod"));
+        
         try{
             DBConnection db = new DBConnection();
             db.Connect();
-            db.removeShrt("POWER_SUPPLY",st1.trim(), st2.trim());
+            db.removeShrt("POWER_SUPPLY",st1.trim());
             db.closeall();
         }
         catch(SQLException e)

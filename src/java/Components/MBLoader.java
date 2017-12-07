@@ -1,16 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Components;
-
+import java.sql.SQLException;
 import java.util.ArrayList;
 
-/**
- *
- * @author user
- */
 public class MBLoader {
     private ArrayList<Integer> cods = new ArrayList<>();
     private ArrayList<String> brands = new ArrayList<>();
@@ -56,6 +47,10 @@ public class MBLoader {
         noe = 0;
     }
     
+    public ArrayList<Integer> listCods()
+    {
+        return cods;
+    }
    
     public ArrayList<String> listBrands()
     {
@@ -123,5 +118,5 @@ public class MBLoader {
             
         }
     }
-    
+
 }

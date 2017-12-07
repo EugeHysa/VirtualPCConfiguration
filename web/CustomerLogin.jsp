@@ -7,8 +7,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Login</title>
+        <title>Login to VIRTUAL</title>
         <link rel="stylesheet" type="text/css" href="./CSStyles/LoginStyle.css">
+        <link rel="icon" href="./../../CSStyles/projectIcon.png" type="image/png"/>
     </head>
     <body>
         <div class="login-page">
