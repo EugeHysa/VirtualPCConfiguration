@@ -19,6 +19,7 @@
                 <input type="text" name="uname" placeholder="Username..."/>
                 <input type="password" name="pass" placeholder="Password..."/>
                 <button>Sign In</button>
+                <p class="message"><a href="index.html">Go back home! <img src="./CSStyles/home.png" alt="Go back home!" width="16" height="16"></a></p>
             </form>
           </div>
         </div>

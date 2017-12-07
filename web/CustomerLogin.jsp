@@ -20,6 +20,7 @@
                 <input type="password" name="pass" placeholder="Password..."/>
                 <button>Sign In</button>
                 <p class="message">Not registered?! <a href="reg.jsp">Create an account!</a></p>
+                <p class="message"><a href="index.html">Go back home! <img src="./CSStyles/home.png" alt="Go back home!" width="16" height="16"></a></p>
             </form>
           </div>
         </div>
