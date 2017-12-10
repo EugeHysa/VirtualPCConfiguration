@@ -13,16 +13,17 @@
     <body>
         <div class="grid">
             <div class="header">GUARDA CHE BEL BANNER HO FATTO</div>
-            <div class="navbar">  
-                <input type="button" value="SIGN-IN" name="sign-in" onclick="location.href='../../CustomerLogin.jsp'"/>
-                <input type="button" value="SIGN-UP" name="sign-up" onclick="location.href='../../reg.jsp'"/>
+            <div class="navbar">
                 <%//Success of login
                 if ((session.getAttribute("userid") == null) || (session.getAttribute("userid") == "")) {
                 %>
                     You are not logged in
+                    <input type="button" value="SIGN-IN" name="sign-in" onclick="location.href='../../CustomerLogin.jsp'"/>
+                    <input type="button" value="SIGN-UP" name="sign-up" onclick="location.href='../../reg.jsp'"/>
                 <%} 
                 else {%>
-                    Welcome <%=session.getAttribute("userid")%> <a href='../../logout.jsp'>Log out</a>
+                    Welcome <%=session.getAttribute("userid")%>
+                    <input type="button" value="LOGOUT" name="logout" onclick="location.href='../../logout.jsp'"/>
                     <%}%>
             </div>
             <div class="sidebar">
@@ -37,7 +38,7 @@
                     <tr><label>Price:</label><input type="text" id="priceField" disabled="disabled" value="<% if(request.getParameter("mbPrice")!=null) out.println(request.getParameter("mbPrice"));%>" ><br></tr>
                 </table>
             </div>
-            <div id="list1" class="content">
+            <div class="content">
                 <!-- Progressbar -->
                 <ul id="progressbar">
                     <li id="active1">Motherboard</li>
@@ -48,8 +49,6 @@
                     <li>Power Supply</li>
                     <li>Case</li>
                 </ul>
-                <!-- Fieldsets -->
-                <fieldset id="first">
                 <!-- Loading Motherboard components in a table-->
                 <%
                     out.println(new HTMLTableCreator().MBTableCreator(false));
@@ -90,7 +89,6 @@
                         };
                     }
                 </script>
-                </fieldset>
             </div>
             <div class="footer">
                 <input type="button" value="Admin_Mode" name="Admin_Mode" onclick="location.href='../../indexadmin.jsp'"/>

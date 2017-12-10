@@ -17,7 +17,7 @@ public class HTMLTableCreator {
         
             db.loadMB(mb);
             
-            ss.append("<table id=\"table1\" border=\"0\">");
+            ss.append("<table id=\"table1\" class=\"tableSection\">");
             ss.append("<thead>");
             ss.append("<tr>");
             ss.append("<th>Brand</th>");
@@ -93,7 +93,8 @@ public class HTMLTableCreator {
         }
 
         
-        ss.append("<table id=\"table2\" border=\"1\">");
+        ss.append("<table id=\"table2\" class=\"tableSection\">");
+        ss.append("<thead>");
         ss.append("<tr>");
         ss.append("<th>Brand</th>");
         ss.append("<th>Model</th>");
@@ -104,7 +105,8 @@ public class HTMLTableCreator {
         ss.append("<th>PRICE</th>");
         if(f==true) ss.append("<th>Delete</th>");
         ss.append("</tr>");
-        
+        ss.append("</thead>");
+        ss.append("<tbody>");
                                 
         for(int i = 0; i < cpu.getSize(); i++)
         {
@@ -126,7 +128,8 @@ public class HTMLTableCreator {
             ss.append("<td>"+db2+"</td>");
             if(f == true) ss.append("<td> <form action=\"../DeletePage/DeleteCpu.jsp\" method=\"post\"><input type=\"hidden\" value=\" " + str1 + " \" name = \"brand_delete\"> <input type=\"hidden\" value=\" " + str2 + " \" name = \"model_delete\"> <input type=\"submit\" value=\"Remove\"> </form action> </td>");
             ss.append("</tr>");
-             }	
+            }	
+            ss.append("</tbody>");
             ss.append("</table>");
             
             db.closeall();
@@ -158,7 +161,8 @@ public class HTMLTableCreator {
         }
 
         
-        ss.append("<table id=\"table3\" border=\"1\">");
+        ss.append("<table id=\"table3\" class=\"tableSection\">");
+        ss.append("<thead>");
         ss.append("<tr>");
         ss.append("<th>Brand</th>");
         ss.append("<th>Model</th>");
@@ -171,7 +175,8 @@ public class HTMLTableCreator {
         ss.append("<th>Price</th>");
         if(f==true) ss.append("<th>Delete</th>");
         ss.append("</tr>");
-        
+        ss.append("</thead>");
+        ss.append("<tbody>");
                                 
         for(int i = 0; i < ram.getSize(); i++)
         {
@@ -199,6 +204,7 @@ public class HTMLTableCreator {
             ss.append("</tr>");
             
         }
+        ss.append("</tbody>");
         ss.append("</table>");
         db.closeall();
         }
@@ -223,7 +229,8 @@ public class HTMLTableCreator {
         
         db.loadGCard(gc);
         
-        ss.append("<table id=\"table4\" border=\"1\">");
+        ss.append("<table id=\"table4\" class=\"tableSection\">");
+        ss.append("<thead>");
         ss.append("<tr>");
         ss.append("<th>Brand</th>");
 	ss.append("<th>Model</th>");
@@ -236,7 +243,8 @@ public class HTMLTableCreator {
 	ss.append("<th>Price</th>");
 	if(f==true) ss.append("<th>Delete</th>");
         ss.append("</tr>");
-        
+        ss.append("</thead>");
+        ss.append("<tbody>");
 
         for(int i = 0; i < gc.getSize(); i++)
         {
@@ -263,6 +271,7 @@ public class HTMLTableCreator {
             ss.append("</tr>");
     
         }
+        ss.append("</tbody>");
         ss.append("</table>");
         db.closeall();
         }
@@ -287,7 +296,8 @@ public class HTMLTableCreator {
         
         db.loadHDrive(hd);
         
-        ss.append("<table id=\"table5\" border=\"1\">");
+        ss.append("<table id=\"table5\" class=\"tableSection\">");
+        ss.append("<thead>");
         ss.append("<tr>");
         ss.append("<th>Brand</th>");
         ss.append("<th>Model</th>");
@@ -300,6 +310,8 @@ public class HTMLTableCreator {
         ss.append("<th>Price</th>");
 	if(f==true) ss.append("<th>Delete</th>");
         ss.append("</tr>");
+        ss.append("</thead>");
+        ss.append("<tbody>");
         
         for(int i = 0; i < hd.getSize(); i++)
         {
@@ -326,6 +338,7 @@ public class HTMLTableCreator {
             ss.append("</tr>");
         }		
         
+        ss.append("</tbody>");
         ss.append("</table>");
         db.closeall();
         }
@@ -349,7 +362,8 @@ public class HTMLTableCreator {
         
         db.loadPS(ps);
         
-        ss.append("<table id=\"table6\" border=\"1\">");
+        ss.append("<table id=\"table6\" class=\"tableSection\">");
+        ss.append("<thead>");
         ss.append("<tr>");
         ss.append("<th>Brand</th>");
         ss.append("<th>Model</th>");
@@ -361,6 +375,8 @@ public class HTMLTableCreator {
         ss.append("<th>Price</th>");
 	if(f==true) ss.append("<th>Delete</th>");
         ss.append("</tr>");
+        ss.append("</thead>");
+        ss.append("<tbody>");
         
         for(int i = 0; i < ps.getSize(); i++)
         {
@@ -385,7 +401,7 @@ public class HTMLTableCreator {
             if(f == true) ss.append("<td> <form action=\"../DeletePage/DeletePS.jsp\" method=\"post\"> <input type=\"hidden\" value=\" " + str1 + " \" name = \"brand_delete\"> <input type=\"hidden\" value=\" " + str2 + " \" name = \"model_delete\"> <input type=\"submit\" value=\"Remove\"> </form action> </td>");
             ss.append("</tr>");
         }		
-        
+        ss.append("</tbody>");
         ss.append("</table>");
         db.closeall();
         }
@@ -410,7 +426,8 @@ public class HTMLTableCreator {
         
         db.loadCase(ca);
         
-        ss.append("<table id=\"table7\" border=\"1\">");
+        ss.append("<table id=\"table7\" class=\"tableSection\">");
+        ss.append("<thead>");
         ss.append("<tr>");
         ss.append("<th>Brand</th>");
         ss.append("<th>Model</th>");
@@ -421,6 +438,8 @@ public class HTMLTableCreator {
         ss.append("<th>Price</th>");
 	if(f==true) ss.append("<th>Delete</th>");
         ss.append("</tr>");
+        ss.append("</thead>");
+        ss.append("<tbody>");
         
         for(int i = 0; i < ca.getSize(); i++)
         {
@@ -443,7 +462,7 @@ public class HTMLTableCreator {
             if(f == true) ss.append("<td> <form action=\"../DeletePage/DeleteCase.jsp\" method=\"post\"> <input type=\"hidden\" value=\" " + str1 + " \" name = \"brand_delete\"> <input type=\"hidden\" value=\" " + str2 + " \" name = \"model_delete\"> <input type=\"submit\" value=\"Remove\"> </form action> </td>");
             ss.append("</tr>");
         }		
-        
+        ss.append("</tbody>");
         ss.append("</table>");
         db.closeall();
         }

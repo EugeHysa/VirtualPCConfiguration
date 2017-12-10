@@ -51,8 +51,6 @@
                     <li id="active1">Power Supply</li>
                     <li>Case</li>
                 </ul>
-                <!-- Fieldsets -->
-                <fieldset id="first">
                 <!-- Loading HDisk components in a table-->
                 <%
                     out.println(new HTMLTableCreator().createPS(false));
@@ -105,8 +103,7 @@
                        };
                     }
                     </script>
-                    <a href="javascript:history.go(-1)" onMouseOver="self.status.referrer; return true;"><input type="button" value="Previous"></a>
-                </fieldset>     
+                    <a href="javascript:history.go(-1)" onMouseOver="self.status.referrer; return true;"><input type="button" value="Previous"></a>    
             </div>
             <div class="footer">
                 <input type="button" value="Admin_Mode" name="Admin_Mode" onclick="location.href='../../indexadmin.jsp'"/>

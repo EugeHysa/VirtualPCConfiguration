@@ -48,8 +48,7 @@
                     <li>Hard Disk</li>
                     <li>Power Supply</li>
                     <li>Case</li>
-                </ul>                   
-                <fieldset id="first">
+                </ul>
                 <!-- Loading CPU components in a table-->
                 <%
                     String brand = request.getParameter("BRAND");
@@ -102,7 +101,6 @@
                 </form>
                 <a href="javascript:history.go(-1)" onMouseOver="self.status.referrer; return true;"><input type="button" value="Previous"></a>
                 <!-- <a href="javascript: document.getElementById('mbField').value; document.getElementById('mbPrice').value; document.getElementById('form').submit();"> <input type="button" value="Previous"></a> -->
-                </fieldset>
             </div>
             <div class="footer">
                 <input type="button" value="Admin_Mode" name="Admin_Mode" onclick="location.href='../../indexadmin.jsp'"/>

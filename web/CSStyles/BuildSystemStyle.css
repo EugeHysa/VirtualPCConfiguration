@@ -1,5 +1,6 @@
-@import "http://fonts.googleapis.com/css?family=Droid+Serif";  /* This Line is to import Google font style */
-
+/*Font Import*/
+@import "http://fonts.googleapis.com/css?family=Droid+Serif";
+/*Pagina*/
 html { width: 100%; height: 100%; height: auto; }
 body {
     background-image: url("Sfondo1.jpg");
@@ -7,6 +8,7 @@ body {
     background-size: 100% 100%;
     background-attachment: fixed;
 }
+/*Selezione Righe Tabella*/
 tr {
     cursor: pointer;
     transition: all .25s ease-in-out;
@@ -14,6 +16,7 @@ tr {
 }
 tr:hover {background-color: #D9853B}
 .selected{background-color: #D9853B; color: #fff;}
+/*Tabella*/
 table{
     width: 600px;
     background-color: lightgrey;
@@ -29,6 +32,7 @@ th{
 td{
     height: 25px;
 }
+/*Scrollbar*/
 table.tableSection {
   display: table;
   width: 100%;
@@ -45,7 +49,7 @@ table.tableSection thead {
 }
 table.tableSection tbody {
   overflow: auto;
-  height: 300px;
+  height: 250px;
   display: block;
 }
 table.tableSection tr {
@@ -54,6 +58,7 @@ table.tableSection tr {
   display: table;
   table-layout: fixed;
 }
+/*Etichette*/
 label {
     color: #74AFAD;
     font-weight: bold;
@@ -61,6 +66,7 @@ label {
     width: 150px;
     float: left;
 }
+/*Grid*/
 .grid {
     display: grid;
     grid-template-columns: 10% 15% 65% 10%;
@@ -100,7 +106,7 @@ label {
     color: #D9853B;
 }
 .hidden { display: none; }
-
+/*Progressbar*/
 #progressbar{
     margin:0;
     padding:0;
@@ -109,7 +115,7 @@ label {
 #active1{
     color: #D9853B;
 }
-
+/*Fieldset*/
 fieldset{
     display:none;
     width: 350px;
@@ -118,6 +124,7 @@ fieldset{
     display:block;
     width:350px;
 }
+/*Buttons*/
 input[type=text],select{
     width:100%;
     margin:10px 0;
@@ -138,6 +145,7 @@ input[type=submit],input[type=button]{
     color:#fff;
     font-family:'Droid Serif',serif;
 }
+/*Links*/
 a:link, a:visited{
     color: #D9853B;
 }
