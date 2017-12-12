@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Update DB Components </title>
+		<link rel="stylesheet" href="UpdateDBCompStyle.css">
+		<script type="text/javascript">
+			function openPage(pageURL){
+				window.location.href = pageURL;
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			<h1> Choose Type of Component </h1> <br>
+			<div class="components">
+				<input type="button" value="Motherboard" name="motherboard" onclick="openPage('MotherboardPage.jsp')"/>
+				<input type="button" value="CPU" name="cpu" onclick="openPage('CpuPage.jsp')"/>
+				<input type="button" value="RAM" name="ram" onclick="openPage('RamPage.jsp')"/>
+				<input type="button" value="Graphics Card" name="gcard" onclick="openPage('GCardPage.jsp')"/>
+				<input type="button" value="Hard Disk" name="hdisk" onclick="openPage('HDiskPage.jsp')"/>
+				<input type="button" value="Power Supply" name="powersupply" onclick="openPage('PowerSupplyPage.jsp')"/>
+				<input type="button" value="Case" name="case" onclick="openPage('CasePage.jsp')"/>
+			</div>
+		</center>
+	</body>
+</html>

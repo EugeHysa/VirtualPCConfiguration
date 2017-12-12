@@ -1,0 +1,34 @@
+create table CustomerLogin (USERNAME varchar (20),
+PASS varchar (20),
+EMAIL varchar (20),
+ADDRESS varchar (20),
+USERSAVE varchar(20) references CARRELLO (COD),
+primary key (USERNAME, PASS)
+);
+
+
+
+
+
+create table PURCHASES (COD int (25) primary key auto_increment,
+MCOD varchar(5) REFERENCES MOTHERBOARD (COD),
+CPUCOD varchar(5) REFERENCES CPU (COD),
+RCOD varchar(5) REFERENCES RAM (COD),
+GCOD varchar(5) REFERENCES GRAPHICS_CARD(COD),
+HCOD varchar(5) REFERENCES HDRIVE (COD),
+PCOD varchar(5) REFERENCES POWER_SUPPLY (COD),
+CSCOD varchar(5) REFERENCES CASE1 (COD));
+
+
+
+
+
+
+create table PURCHASES ( COD int (25) primary key auto_increment,
+MCOD varchar(5) REFERENCES MOTHERBOARD (COD),
+CPUCOD varchar(5) REFERENCES CPU (COD),
+RCOD varchar(5) REFERENCES RAM (COD),
+GCOD varchar(5) REFERENCES GRAPHICS_CARD(COD),
+HCOD varchar(5) REFERENCES HDRIVE (COD),
+PCOD varchar(5) REFERENCES POWER_SUPPLY (COD),
+CSCOD varchar(5) REFERENCES CASE1 (COD));

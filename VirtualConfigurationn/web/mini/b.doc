@@ -1,0 +1,38 @@
+Hmm, personalmente conosco solo 2 modi per passare delle variabili da una pagina all'altra attraverso javascript:
+1) attraverso cookies:
+impostando il valore dei cookies al nome dei
+
+HTML
+var a = prompt("Scrivi il tuo nome","");
+var b = prompt("scrivi il tuo cognome","");
+
+document.cookie = "nome="+a+"; cognome="+b;
+
+e in seguito leggendo da una pagina dello stesso dominio il valore dei cookies
+
+oppure
+
+2) attraverso il passaggio per indirizzo:
+per esempio, prova a scrivere questo codice all'interno di una pagina:
+
+HTML
+<form id="form" action="SECONDA_PAGINA.html">
+<input id="nome" name="nome" type="hidden">
+<input id="cognome" name="cognome" type="hidden">
+</form>
+<script>
+var a = prompt("Scrivi il tuo nome","");
+var b = prompt("scrivi il tuo cognome","");
+</script>
+<a href="javascript: document.getElementById('nome').value = a; document.getElementById('cognome').value = b; document.getElementById('form').submit();">Pagina successiva</a>
+
+
+cosi potrai vedere che il link della pagina diventerà:
+
+www.indirizzodelsito.it/SECONDA_PAGINA.html?nome=Red&cognome=eYe 
+
+così facendo si può leggere attraverso l'uso della funzione document.location potrai leggere questi i parametri nome e cognome
+
+
+Per le variabili globali, quelle dovrebbero essere visibili solo nella pagina stessa e non possono interagire con le altre pagine.
+Forse ti riferivi alle variabili globali di php, ma quello è tutt'altro linguaggio.

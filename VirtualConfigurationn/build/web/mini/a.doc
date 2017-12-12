@@ -1,0 +1,31 @@
+In questo breve post vi segnalo un’interessante funzione in Javascript per effettuare il passaggio di dati da una pagina all’altra senza utilizzare le QueryString (cioè il metodo GET). La funzione in questione, in sostanza, effettua il passaggio di dati col metodo POST senza necessità di implementare un form nella pagina.
+Di seguito il contenuto della nostra funzioncina:
+
+function invia_dati(servURL, params, method) {
+    method = method || "post"; // il metodo POST è usato di default
+    var form = document.createElement("form");
+    form.setAttribute("method", method);
+    form.setAttribute("action", servURL);
+    for(var key in params) {
+        var hiddenField = document.createElement("input");
+        hiddenField.setAttribute("type", "hidden");
+        hiddenField.setAttribute("name", key);
+        hiddenField.setAttribute("value", params[key]);
+        form.appendChild(hiddenField);
+    }
+    document.body.appendChild(form);
+    form.submit();
+}
+La funzione prevede tre paramentri:
+
+la URL della pagina cui passare i dati;
+i parametri da passare alla pagina
+il metodo (POST è quello di default)
+La nostra funzione, in pratica, crea dinamicamente un form, poi prende i parametri in argomento e li trasforma in campi hidden ed, infine, effettua il submit del form creato.
+
+Vediamo, per finire, un esempio di utilizzo della funzione in oggetto:
+
+info
+1
+<a href="#" onclick="invia_dati('http://www.miosito.com/pagina.php',{ 'nome':'Mario','cognome':'Rossi','id':123},'post')">clicca qui</a>
+Come potete vedere i parametri sono passati sotto forma di coppie (Attributo:Valore) separati con la virgola.
