@@ -29,7 +29,7 @@
             <div class="content">
                 <p>Component Table:</p>
                 <%
-                    out.println(new HTMLTableCreator().RAMTableCreator(true, "", ""));
+                    out.println(new HTMLTableCreator().createRAM(true, "", ""));
                 %>
             </div>
             <div class="insidebar">

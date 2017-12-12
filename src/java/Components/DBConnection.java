@@ -87,7 +87,7 @@ public class DBConnection
         try
         {
             int ress;
-            ress = mystmt.executeUpdate("insert into (BRAND, MODEL, CPUSOCKET, FREQUENCY, CORES, TDP, PRICE) values('"+brand+"', '"+model+"', '"+socket+"', "+frequency+", "+core+", "+tdp+", "+price+")");
+            ress = mystmt.executeUpdate("insert into CPU (BRAND, MODEL, CPUSOCKET, FREQUENCY, CORES, TDP, PRICE) values('"+brand+"', '"+model+"', '"+socket+"', "+frequency+", "+core+", "+tdp+", "+price+")");
             System.out.println(ress + " query affected");
         }
         catch(SQLException ex)

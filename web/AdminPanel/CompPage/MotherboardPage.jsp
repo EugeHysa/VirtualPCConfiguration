@@ -29,7 +29,7 @@
             <div class="content">
                 <p>Component Table:</p>
                 <%
-                    out.println(new HTMLTableCreator().MBTableCreator(true));
+                    out.println(new HTMLTableCreator().createMotherboard(true));
                 %>
             </div>
             <div class="insidebar">

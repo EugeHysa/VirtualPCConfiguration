@@ -1,35 +1,20 @@
- /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Components;
-
-
 import DatabaseElements.DBFilters;
 import java.sql.SQLException;
 
-
-/**
- *
- * @author user
- */
 public class HTMLTableCreator {
-    
-    
     public static String createMotherboard(Boolean f)
     {
-        
         String output;
         StringBuilder ss = new StringBuilder();
         try{
-            
             DBFilters db = new DBFilters();
             MBLoader mb = new MBLoader();
         
             db.loadMB(mb);
 
-            ss.append("<table id=\"table1\" border=\"1\">");
+            ss.append("<table id=\"table1\">");
+            ss.append("<thead>");
             ss.append("<tr>");
             ss.append("<th onclick=\"sortTable(0)\">Brand</th>");
             ss.append("<th>Model</th>");
@@ -46,7 +31,8 @@ public class HTMLTableCreator {
             if(f == false) ss.append(" style=\"display:none;\"");
             ss.append(">COD</th>");
             ss.append("</tr>");
-            //ss.append("</tr> <thead> <tbody>");
+            ss.append("</thead>");
+            ss.append("<tbody>");
         
         for(int i = 0; i < mb.getMBSize(); i++)
         {
@@ -82,6 +68,7 @@ public class HTMLTableCreator {
             
         }		
         
+        ss.append("</tbody>");
         ss.append("</table>");
         /*ss.append("<script>\n" +
 "function sortTable(n) {\n" +
@@ -126,7 +113,6 @@ public class HTMLTableCreator {
     catch(SQLException ex){
         ss.append("Eccezione SQL.");
     }
-        
         output = ss.toString();
         return output;
     }
@@ -140,16 +126,15 @@ public class HTMLTableCreator {
         DBFilters db = new DBFilters();
         CPULoader cpu = new CPULoader();
         
-        
-        
-	if(f == true) db.loadCPU(cpu);
+        if(f == true) db.loadCPU(cpu);
 	if(f == false)
         {
             cpu = db.iSelected2(brand,model);
         }
 
         
-        ss.append("<table id=\"table1\" border=\"1\">");
+        ss.append("<table id=\"table2\">");
+        ss.append("<thead>");
         ss.append("<tr>");
         ss.append("<th>Brand</th>");
         ss.append("<th>Model</th>");
@@ -163,8 +148,9 @@ public class HTMLTableCreator {
         if(f == false) ss.append(" style=\"display:none;\"");
         ss.append(">COD</th>");
         ss.append("</tr>");
+        ss.append("</thead>");
+        ss.append("<tbody>");
         
-                                
         for(int i = 0; i < cpu.getSize(); i++)
         {
             int cod = cpu.listCods().get(i);
@@ -190,6 +176,8 @@ public class HTMLTableCreator {
             ss.append(">"+cod+"</td>");
             ss.append("</tr>");
              }	
+        
+            ss.append("</tbody>");
             ss.append("</table>");
             
             db.closeall();
@@ -212,16 +200,15 @@ public class HTMLTableCreator {
         DBFilters db = new DBFilters();
         RAMLoader ram = new RAMLoader();
         
-        
-        
-	if(f == true) db.loadRAM(ram);
+        if(f == true) db.loadRAM(ram);
 	if(f == false)
         {
             ram = db.isSelected3(brand,model);
         }
 
         
-        ss.append("<table id=\"table3\" border=\"1\">");
+        ss.append("<table id=\"table3\">");
+        ss.append("<thead>");
         ss.append("<tr>");
         ss.append("<th>Brand</th>");
         ss.append("<th>Model</th>");
@@ -237,6 +224,8 @@ public class HTMLTableCreator {
         if(f == false) ss.append(" style=\"display:none;\"");
         ss.append(">COD</th>");
         ss.append("</tr>");
+        ss.append("</thead>");
+        ss.append("<tbody>");
         
                                 
         for(int i = 0; i < ram.getSize(); i++)
@@ -270,6 +259,7 @@ public class HTMLTableCreator {
             ss.append("</tr>");
             
         }
+        ss.append("</tbody>");
         ss.append("</table>");
         db.closeall();
         }
@@ -294,7 +284,8 @@ public class HTMLTableCreator {
         
         db.loadGCard(gc);
         
-        ss.append("<table id=\"table\" border=\"1\">");
+        ss.append("<table id=\"table4\">");
+        ss.append("<thead>");
         ss.append("<tr>");
         ss.append("<th>Brand</th>");
 	ss.append("<th>Model</th>");
@@ -310,8 +301,9 @@ public class HTMLTableCreator {
         if(f == false) ss.append(" style=\"display:none;\"");
         ss.append(">COD</th>");
         ss.append("</tr>");
+        ss.append("</thead>");
+        ss.append("<tbody>");
         
-
         for(int i = 0; i < gc.getSize(); i++)
         {
             int cod = gc.listCods().get(i);
@@ -341,6 +333,7 @@ public class HTMLTableCreator {
             ss.append("</tr>");
     
         }
+        ss.append("</tbody>");
         ss.append("</table>");
         db.closeall();
         }
@@ -365,7 +358,8 @@ public class HTMLTableCreator {
         
         db.loadHDrive(hd);
         
-        ss.append("<table id=\"table\" border=\"1\">");
+        ss.append("<table id=\"table5\">");
+        ss.append("<thead>");
         ss.append("<tr>");
         ss.append("<th>Brand</th>");
         ss.append("<th>Model</th>");
@@ -381,6 +375,8 @@ public class HTMLTableCreator {
         if(f == false) ss.append(" style=\"display:none;\"");
         ss.append(">COD</th>");
         ss.append("</tr>");
+        ss.append("</thead>");
+        ss.append("<tbody>");
         
         for(int i = 0; i < hd.getSize(); i++)
         {
@@ -410,7 +406,7 @@ public class HTMLTableCreator {
             ss.append(">"+cod+"</td>");
             ss.append("</tr>");
         }		
-        
+        ss.append("</tbody>");
         ss.append("</table>");
         db.closeall();
         }
@@ -434,7 +430,8 @@ public class HTMLTableCreator {
         
         db.loadPS(ps);
         
-        ss.append("<table id=\"table\" border=\"1\">");
+        ss.append("<table id=\"table6\">");
+        ss.append("<thead>");
         ss.append("<tr>");
         ss.append("<th>Brand</th>");
         ss.append("<th>Model</th>");
@@ -449,6 +446,8 @@ public class HTMLTableCreator {
         if(f == false) ss.append(" style=\"display:none;\"");
         ss.append(">COD</th>");
         ss.append("</tr>");
+        ss.append("</thead>");
+        ss.append("<tbody>");
         
         for(int i = 0; i < ps.getSize(); i++)
         {
@@ -477,7 +476,7 @@ public class HTMLTableCreator {
             ss.append(">"+cod+"</td>");
             ss.append("</tr>");
         }		
-        
+        ss.append("</tbody>");
         ss.append("</table>");
         db.closeall();
         }
@@ -502,7 +501,8 @@ public class HTMLTableCreator {
         
         db.loadCase(ca);
         
-        ss.append("<table id=\"table1\" border=\"1\">");
+        ss.append("<table id=\"table7\">");
+        ss.append("<thead>");
         ss.append("<tr>");
         ss.append("<th>Brand</th>");
         ss.append("<th>Model</th>");
@@ -516,6 +516,8 @@ public class HTMLTableCreator {
         if(f == false) ss.append(" style=\"display:none;\"");
         ss.append(">COD</th>");
         ss.append("</tr>");
+        ss.append("</thead>");
+        ss.append("<tbody>");
         
         for(int i = 0; i < ca.getSize(); i++)
         {
@@ -542,7 +544,7 @@ public class HTMLTableCreator {
             ss.append(">"+cod+"</td>");
             ss.append("</tr>");
         }		
-        
+        ss.append("</tbody>");
         ss.append("</table>");
         db.closeall();
         }

@@ -3,39 +3,73 @@
 <%@ page language="java" %>
 <%@ page import="java.sql.*" %>
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    ConfigurationSave confSave = (ConfigurationSave) session.getAttribute("confSave");
+    
+    String mbcod = request.getParameter("mbCod");
+    request.getSession().setAttribute("mbCod", mbcod);
+    Double price = Double.parseDouble(request.getParameter("price"));
+    
+    confSave.setMBCod(mbcod);
+    session.setAttribute("confSave", confSave);
+    //request.getSession().setAttribute("price", price);
+    //if(request.getSession().getAttribute("price")!=null)
+    //{
+     //   price = (Double) request.getSession().getAttribute("price");
+    //}
+    
+    String input [] = null;
+    String brand = null;
+    String model = null;
+    if(mbcod != null)
+    {
+        input = new ComponentParser().getComponent("MOTHERBOARD", mbcod).split("-CC-");
+        brand = input[0];
+        model = input[1];
+    }
+    //CPU data init. for return case
+    String cpuField=null;
+    String cpucod = null;
+    if((cpucod = (String) request.getSession().getAttribute("cpuCod"))!=null)
+    {
+        cpuField = new ComponentParser().getComponent("CPU", cpucod);
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="./../../CSStyles/BuildSystemStyle.css">
         <link rel="icon" href="./../../CSStyles/projectIcon.png" type="image/png"/>
-        <title>V I R T U A L</title>
-	</head>
+        <title>VIRTUAL - Choose Your CPU</title>
+    </head>
     <body>
     	<div class="grid">
             <div class="header">BANNER</div>
-            <div class="navbar">  
+            <div class="navbar">
+            <%//Success of login
+            if ((session.getAttribute("userid") == null) || (session.getAttribute("userid") == "")) {
+            %>
+                You are not logged in
                 <input type="button" value="SIGN-IN" name="sign-in" onclick="location.href='../../CustomerLogin.jsp'"/>
                 <input type="button" value="SIGN-UP" name="sign-up" onclick="location.href='../../reg.jsp'"/>
-                <%//Success of login
-                if ((session.getAttribute("userid") == null) || (session.getAttribute("userid") == "")) {
-                %>
-                    You are not logged in
-                <%} 
-                else {%>
-                    Welcome <%=session.getAttribute("userid")%> <a href='../../logout.jsp'>Log out</a>
-                    <%}%>
+            <%} 
+            else {%>
+                Welcome <%=session.getAttribute("userid")%>
+                <input type="button" value="LOGOUT" name="sign-in" onclick="location.href='../../logout.jsp'"/>
+                <%}%>
             </div>
             <div class="sidebar">
                 <table id="configTable" border="0">
-                    <tr><label>Motherboard:</label><input type="text" value="<% out.println(request.getParameter("BRAND") + " " +request.getParameter("MODEL")); %>"  id="mbField" disabled="disabled"></input> </tr><br>
-                    <tr><label>Cpu:</label><input type="text" id="cpuField" disabled="disabled"><input type="text" class="hidden" value="<% out.print(request.getParameter("MBPRI")); %>" id="cpuPrice"></tr><br>
+                    <input type="hidden" id="temp" name="temp" value="<% out.print(mbcod); %>">
+                    <tr><label>Motherboard:</label><input type="text" value="<% out.println(brand + " " + model); %>"  id="mbField" disabled="disabled"></input> </tr><br>
+                    <tr><label>Cpu:</label><input type="text" id="cpuField" value='<% if(cpuField != null) out.print(cpuField.replace("-CC-", " ")); %>' disabled="disabled"><input type="text" class="hidden" value="<% out.print(price); %>" id="cpuPrice"></tr><br>
                     <tr><label>Ram:</label><input type="text" id="ramField" disabled="disabled"></tr><br>
                     <tr><label>Graphic Card:</label><input type="text" id="gcField" disabled="disabled"></tr><br>
                     <tr><label>Hard Disk:</label><input type="text" id="hdField" disabled="disabled"></tr><br>
                     <tr><label>Power Supply:</label><input type="text" id="psField" disabled="disabled"></tr><br>
                     <tr><label>Case:</label><input type="text" id="caseField" disabled="disabled"></tr><br><hr>
-                    <tr><label>Price:</label><input type="text" value="<% out.println(request.getParameter("MBPRI")); %>" id="priceField" disabled="disabled"></input><br></tr>
+                    <tr><label>Price:</label><input type="text" value="<% out.println(price); %>" id="priceField" disabled="disabled"></input><br></tr>
                 </table>
             </div>
             <div class="content">
@@ -51,25 +85,21 @@
                 </ul>
                 <!-- Loading CPU components in a table-->
                 <%
-                    String brand = request.getParameter("BRAND");
-                    String model = request.getParameter("MODEL");
-
-                    ConfigurationSave cs = (ConfigurationSave) session.getAttribute("confsave");
-                    //System.out.println("yeeha" + cs.getPrice());
-                    out.print(new HTMLTableCreator().CPUTableCreator(false, brand, model));
+                    out.print(new HTMLTableCreator().createCPU(false, brand, model));
                 %>
-                <!--Sending data to next page-->
-                <form action="RAMSystemPage.jsp" method="POST">
-                    <input type="hidden" value="<%out.print(request.getParameter("BRAND"));%>" id="mbbrand" name="mbbrand">
-                    <input type="hidden" value="<%out.print(request.getParameter("MODEL"));%>" id="mbmodel" name="mbmodel">
-                    <input type="hidden" value="" id="CPUBRAND" name="CPUBRAND">
-                    <input type="hidden" value="" id="CPUMODEL" name="CPUMODEL">
-                    <input type="text" id="NEXTPRI" name="NEXTPRI">
-                    <input type="submit" value="Next"> 
-		</form> 
-
                 <script>
-                    var retMB = document.getElementById("mbField").innerHTML;
+                    var urlForward;
+                    if(document.getElementById("cpuField").value == null || document.getElementById("cpuField").value == "")
+                        {
+                           // urlForward = "CPUSystemPage.jsp?cod="+document.getElementById("temp").value+"&priceField="+document.getElementById("priceField").value;
+                        }
+                        else
+                        {
+                           // urlForward = RAMSystem
+                        }
+                          
+                    urlBackward = "MBSystemPage.jsp";
+                    //urlBackward = "MBSystemPage.jsp?cod=" + document.getElementById("temp").value + "&priceField="+ document.getElementById("cpuPrice").value;
                     var cpuIndex;
                     var tableCPU = document.getElementById("table2");
                     // get selected row
@@ -87,24 +117,27 @@
                             //Add class to the selected row
                             this.classList.toggle("selected");
                             
-                            document.getElementById("cpuField").value = this.cells[1].innerHTML;
-                            document.getElementById("CPUBRAND").value = this.cells[0].innerHTML;
-                            document.getElementById("CPUMODEL").value = this.cells[1].innerHTML;
-                            document.getElementById("priceField").value = parseFloat(document.getElementById("cpuPrice").value) + parseFloat(this.cells[6].innerHTML);
-                            document.getElementById("NEXTPRI").value = document.getElementById("priceField").value;
-                        };                      
+                            document.getElementById("cpuField").value = this.cells[0].innerHTML + " " + this.cells[1].innerHTML;
+                            document.getElementById("cpuCod").value = this.cells[7].innerHTML;
+                            document.getElementById("priceField").value = (parseFloat(document.getElementById("cpuPrice").value) + parseFloat(this.cells[6].innerHTML)).toFixed(2);
+                            document.getElementById("price").value = document.getElementById("priceField").value;
+                            document.getElementById("nextbtn").disabled = false;
+                            //urlForward="RAMSystemPage.jsp?mbcod="+ document.getElementById("temp").value +"&cpucod=" + this.cells[7].innerHTML +"&priceField="+ document.getElementById("priceField").value;
+                        };
                     }
                 </script>
-                <form id="form" action="MBSystemPage.jsp">
-                    <input id="mbField" name="mbField" value="<%out.print(request.getParameter("BRAND") + " " +request.getParameter("MODEL"));%>" type="hidden">
-                    <input id="mbPrice" name="mbPrice" value="<%out.print(request.getParameter("MBPRI"));%>" type="hidden">
+                <form action="RAMSystemPage.jsp" method="POST">
+                    <input type="hidden" id="cpuCod" name ="cpuCod" value="<% if(cpucod!=null) out.print(cpucod); %>"/>
+                    <input type="hidden" id="price" name ="price" value="<% if(price!=null) out.print(price); %>"/>
+                    <input type="submit" disabled="" id="nextbtn" value="Next"/>
                 </form>
                 <a href="javascript:history.go(-1)" onMouseOver="self.status.referrer; return true;"><input type="button" value="Previous"></a>
-                <!-- <a href="javascript: document.getElementById('mbField').value; document.getElementById('mbPrice').value; document.getElementById('form').submit();"> <input type="button" value="Previous"></a> -->
+                <!--input  type="button" value="Previous" name="previous" onclick="location.href=urlBackward"/-->
+                <!--input  type="button" value="Next" name="next" onclick="location.href=urlForward"/-->
             </div>
             <div class="footer">
-                <input type="button" value="Admin_Mode" name="Admin_Mode" onclick="location.href='../../indexadmin.jsp'"/>
-                <input type="button" value="Restart" name="RestartConfig" onclick="location.href='../../index.html'"/>
+                    <input type="button" value="Admin_Mode" name="Admin_Mode" onclick="location.href='../../indexadmin.jsp'"/>
+                    <input type="button" value="Restart" name="RestartConfig" onclick="location.href='../../index.html'"/>
             </div>
         </div>
     </body>

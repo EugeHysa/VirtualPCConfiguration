@@ -18,7 +18,7 @@ tr:hover {background-color: #D9853B}
 .selected{background-color: #D9853B; color: #fff;}
 /*Tabella*/
 table{
-    width: 600px;
+    /*width: 600px;*/
     background-color: lightgrey;
     border-collapse: collapse;
 }
@@ -27,7 +27,7 @@ th{
     color: white;
     font-family: bold;
     height: 15px;
-    width: 45px;
+    /*width: 45px;*/
 }
 td{
     height: 25px;
@@ -45,7 +45,7 @@ table.tableSection thead {
   overflow-y: scroll;
   display: table;
   table-layout: fixed;
-  width: 847px; /* assuming scrollbar width as 16px */
+  /*width: 847px; assuming scrollbar width as 16px */
 }
 table.tableSection tbody {
   overflow: auto;
@@ -54,7 +54,7 @@ table.tableSection tbody {
 }
 table.tableSection tr {
   width: 100%;
-  text-align: left;
+  text-align: center;
   display: table;
   table-layout: fixed;
 }
@@ -114,6 +114,9 @@ label {
 }
 #active1{
     color: #D9853B;
+}
+ul#progressbar li {
+    display: inline;
 }
 /*Fieldset*/
 fieldset{
