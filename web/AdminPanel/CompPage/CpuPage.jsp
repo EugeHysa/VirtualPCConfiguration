@@ -49,10 +49,9 @@
                         <td><input type="text" name="socket"></td>
                     </tr>
                     <tr>	
-                        <td>Frequenza [GHZ]:</td>
+                        <td>Frequenza:</td>
                         <td><input type="text" name="frequenza_GHZ"></td>
                     </tr>
-
                     <tr>	
                         <td>Cores:</td>
                         <td><input type="text" name="cores"></td>
@@ -64,8 +63,7 @@
                     <tr>	
                         <td>Price:</td>
                         <td><input type="text" name="price"></td>
-                    </tr>
-                    <tr>		
+                    </tr>	
                     <tr>
                         <td><input type="submit" value="Aggiungi"></td>
                     </tr>

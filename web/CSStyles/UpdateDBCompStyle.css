@@ -10,8 +10,8 @@ body {
 }
 
 table{
-background-color: lightgrey;
-border-collapse: collapse;
+    background-color: lightgrey;
+    border-collapse: collapse;
 }
 th{
     background-color: #74AFAD;
@@ -22,26 +22,6 @@ th{
 }
 td{
     height: 30px;
-}
-
-table.tableSection {
-    display: table;
-    width: 98%;
-    margin-left: 2px;
-}
-table.tableSection thead,
-table.tableSection tbody {
-    width: 100%;
-}
-table.tableSection thead {
-    overflow-y: scroll;
-    display: table;
-    table-layout: fixed;
-}
-table.tableSection tbody {
-    overflow: auto;
-    height: 300px;
-    display: block;
 }
 table.tableSection tr{
     width: 100%;
