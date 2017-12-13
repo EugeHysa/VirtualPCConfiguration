@@ -13,7 +13,7 @@ public class HTMLTableCreator {
         
             db.loadMB(mb);
 
-            ss.append("<table id=\"table1\">");
+            ss.append("<table id=\"table1\" class=\"tableSection\">");
             ss.append("<thead>");
             ss.append("<tr>");
             ss.append("<th onclick=\"sortTable(0)\">Brand</th>");
@@ -133,7 +133,7 @@ public class HTMLTableCreator {
         }
 
         
-        ss.append("<table id=\"table2\">");
+        ss.append("<table id=\"table2\" class=\"tableSection\">");
         ss.append("<thead>");
         ss.append("<tr>");
         ss.append("<th>Brand</th>");
@@ -207,7 +207,7 @@ public class HTMLTableCreator {
         }
 
         
-        ss.append("<table id=\"table3\">");
+        ss.append("<table id=\"table3\" class=\"tableSection\">");
         ss.append("<thead>");
         ss.append("<tr>");
         ss.append("<th>Brand</th>");
@@ -284,7 +284,7 @@ public class HTMLTableCreator {
         
         db.loadGCard(gc);
         
-        ss.append("<table id=\"table4\">");
+        ss.append("<table id=\"table4\" class=\"tableSection\">");
         ss.append("<thead>");
         ss.append("<tr>");
         ss.append("<th>Brand</th>");
@@ -358,7 +358,7 @@ public class HTMLTableCreator {
         
         db.loadHDrive(hd);
         
-        ss.append("<table id=\"table5\">");
+        ss.append("<table id=\"table5\" class=\"tableSection\">");
         ss.append("<thead>");
         ss.append("<tr>");
         ss.append("<th>Brand</th>");
@@ -430,7 +430,7 @@ public class HTMLTableCreator {
         
         db.loadPS(ps);
         
-        ss.append("<table id=\"table6\">");
+        ss.append("<table id=\"table6\" class=\"tableSection\">");
         ss.append("<thead>");
         ss.append("<tr>");
         ss.append("<th>Brand</th>");
@@ -501,7 +501,7 @@ public class HTMLTableCreator {
         
         db.loadCase(ca);
         
-        ss.append("<table id=\"table7\">");
+        ss.append("<table id=\"table7\" class=\"tableSection\">");
         ss.append("<thead>");
         ss.append("<tr>");
         ss.append("<th>Brand</th>");

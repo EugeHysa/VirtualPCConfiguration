@@ -118,15 +118,6 @@ label {
 ul#progressbar li {
     display: inline;
 }
-/*Fieldset*/
-fieldset{
-    display:none;
-    width: 350px;
-}
-#first{
-    display:block;
-    width:350px;
-}
 /*Buttons*/
 input[type=text],select{
     width:100%;
