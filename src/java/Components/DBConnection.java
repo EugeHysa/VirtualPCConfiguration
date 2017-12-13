@@ -28,12 +28,16 @@ public class DBConnection
             /*JAMES "root", "12345");*/
             /*ANTONINO "root", "Prove");*/
             /*GIOVANNA "root", "Giovanna26");*/
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/virtualconfiguration", "root", "12345");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Components", "root", "untothedead94");
             mystmt = conn.createStatement();
             }
         catch(ClassNotFoundException ex)
         {
             System.err.println("Errore. Driver MySQL non trovato");
+        }
+        catch(SQLException e)
+        {
+            System.err.println("Error in connection");
         }
             return mystmt;
     }
@@ -88,23 +92,17 @@ public class DBConnection
         {
             int ress;
             ress = mystmt.executeUpdate("insert into CPU (BRAND, MODEL, CPUSOCKET, FREQUENCY, CORES, TDP, PRICE) values('"+brand+"', '"+model+"', '"+socket+"', "+frequency+", "+core+", "+tdp+", "+price+")");
+            if(ress == 0) throw new SQLException();
+            
             System.out.println(ress + " query affected");
         }
         catch(SQLException ex)
-        {}
+        {
+            System.err.println("Error in insert query.");
+            System.exit(0);
+        }
     }
     
-    public void removeShCPU(String brand, String model)
-    {
-        try
-        {
-            int ress;            
-            ress = mystmt.executeUpdate("delete from CPU where brand = '"+brand+"' and model = '"+model+"'");
-            System.out.println(ress + " query affected");
-        }
-        catch(SQLException ex)
-        {}
-    }
     
      public void loadCase(CaseLoader c)
     {
@@ -126,23 +124,17 @@ public class DBConnection
         {
             int ress;
             ress = mystmt.executeUpdate("insert into PCCASE (BRAND, MODEL, CASETYPE, COLOR, COMPATIBLE_MOTHERBOARDS, MAX_HDRIVE_LENGTH, PRICE) values('"+brand+"', '"+model+"', '"+type+"', '"+color+"', '"+MOTHERBOARD_compatibili+"', "+max_hdrive_length+", "+price+")");
+            if(ress == 0) throw new SQLException();
+            
             System.out.println(ress + " query affected");
         }
         catch(SQLException ex)
-        {}
+        {
+            System.err.println("Error in insert query.");
+            System.exit(0);
+        }
     }
 
-    public void removeShCase(String brand, String model)
-    {
-        try
-        {
-            int ress;            
-            ress = mystmt.executeUpdate("delete from PCCASE where brand = '"+brand+"' and model = '"+model+"'");
-            System.out.println(ress + " query affected");
-        }
-        catch(SQLException ex)
-        {}
-    }
  
     public void loadMB(MBLoader mb)
     {
@@ -164,23 +156,17 @@ public class DBConnection
         {
             int ress;            
             ress = mystmt.executeUpdate("insert into MOTHERBOARD (BRAND, MODEL, SOCKET_CPU, FORMFACTOR, CHIPSET, RAM_SLOTS, RAM_TYPE, RAM_MAX_GB, TDP, PRICE) values('"+brand+"', '"+model+"','"+socket+"', '"+formfactor+"', '"+chipset+"',  "+ramslot+", '"+ ramtype + "', "+ maxram+", "+tdp+", "+price+")");
+            if(ress == 0) throw new SQLException();
+            
             System.out.println(ress + " query affected");
         }
         catch(SQLException ex)
-        {}
+        {
+            System.err.println("Error in insert query.");
+            System.exit(0);
+        }
     }
     
-    public void removeShMB(String brand, String model)
-    {
-        try
-        {
-            int ress;
-            ress = mystmt.executeUpdate("delete from MOTHERBOARD where brand = '"+brand+"' and model = '"+model+"'");
-            System.out.println(ress + " query affected");
-        }
-        catch(SQLException ex)
-        {}
-    }
     
     public void filldbPS(String brand, String model, String series, String form, String efficiency ,int tdp, String modular, Double price)
     {
@@ -188,10 +174,15 @@ public class DBConnection
         {
             int ress;
             ress = mystmt.executeUpdate("insert into POWER_SUPPLY (BRAND, MODEL, SERIES, FORM, EFFICIENCY, TDP, MODULAR, PRICE) values('"+brand+"', '"+model+"', '"+series+"', '"+form+"', '"+efficiency+"', "+tdp+", '"+modular+"', "+price+")");
+            if(ress == 0) throw new SQLException();
+            
             System.out.println(ress + " query affected");
         }
         catch(SQLException ex)
-        {}
+        {
+            System.err.println("Error in insert query.");
+            System.exit(0);
+        }
     }
        
     public void loadPS(PSLoader ps)
@@ -208,17 +199,7 @@ public class DBConnection
         {}
     }
 
-     public void removeShPS(String brand, String model)
-    {
-        try
-        {
-            int ress;            
-            ress = mystmt.executeUpdate("delete from POWER_SUPPLY where brand = '"+brand+"' and model = '"+model+"'");
-            System.out.println(ress + " query affected");
-        }
-        catch(SQLException ex)
-        {}
-    }
+
     
     public void loadRAM(RAMLoader ram)
     {
@@ -240,23 +221,17 @@ public class DBConnection
         {
             int ress;
             ress = mystmt.executeUpdate("insert into RAM (BRAND, MODEL, RAM_TYPE, SPEED, TDP, NUMBER_OF_MODULES, SIZE_OF_MODULES, SIZE, PRICE) values('"+brand+"', '"+model+"', '"+type+"', '"+speed+"', "+tdp+", "+nom+", "+som+ ","+ size +", "+price+")");
+            if(ress == 0) throw new SQLException();
+            
             System.out.println(ress + " query affected");
         }
         catch(SQLException ex)
-        {}
-    }
-    
-    public void removeShRAM(String brand, String model)
-    {
-        try
         {
-            int ress;            
-            ress = mystmt.executeUpdate("delete from RAM where brand = '"+brand+"' and model = '"+model+"'");
-            System.out.println(ress + " query affected");
+            System.err.println("Error in insert query.");
+            System.exit(0);
         }
-        catch(SQLException ex)
-        {}
     }
+
     
     public void loadGCard(GCardLoader gc)
     {
@@ -278,23 +253,18 @@ public class DBConnection
         {
             int ress;
             ress = mystmt.executeUpdate("insert into GRAPHICS_CARD (brand, model, series, chipset, memory, core_clock, tdp, length,price) values('"+brand+"', '"+model+"', '"+serie+"', '"+chipset+"', "+mem+", "+ clock +", "+tdp+", "+length+", "+price+")");
+            if(ress == 0) throw new SQLException();
+            
             System.out.println(ress + " query affected");
         }
         catch(SQLException ex)
-        {}
+        {
+            System.err.println("Error in insert query.");
+            System.exit(0);
+        }
     }
       
-        public void removeShGC(String brand, String model){
-        try
-        {
-            int ress;            
-            ress = mystmt.executeUpdate("delete from GRAPHICS_CARD where brand = '"+brand+"' and model =  '"+model+"'");
-            System.out.println(ress + " query affected");
-        }
-        catch(SQLException ex)
-        {}      
-    }
-    
+
     public void loadHDrive(HDriveLoader hdd)
     {
         try
@@ -315,23 +285,17 @@ public class DBConnection
         {
             int ress;
             ress = mystmt.executeUpdate("insert into HDRIVE (BRAND,MODEL,SERIE,FORM,TYPE,SIZE,TDP,CACHE,PRICE) values('"+brand+"', '"+model+"', '"+serie+"', '"+form+"', '"+type+"', "+size+","+ tdp + ", " + cache +", "+price+")");
+            if(ress == 0) throw new SQLException();
+            
             System.out.println(ress + " query affected");
         }
         catch(SQLException ex)
-        {}   
+        {
+            System.err.println("Error in insert query.");
+            System.exit(0);
+        } 
     }
 
-    public void removeShHD(String brand, String model)
-    {
-        try
-        {
-            int ress;            
-            ress = mystmt.executeUpdate("delete from HDRIVE where Brand = '"+brand+"' and Model = '"+model+"' " );
-            System.out.println(ress + " query affected");
-        }
-        catch(SQLException ex)
-        {}
-    }
         
     public void removeShrt(String table, String cod)
     {
@@ -339,10 +303,16 @@ public class DBConnection
         {
             int ress;
             ress = mystmt.executeUpdate("delete from "+ table +" where COD = '"+Integer.parseInt(cod)+"'");
+            
+            if(ress == 0) throw new SQLException();
+            
             System.out.println(ress + " query affected");
         }
         catch(SQLException ex)
-        {}
+        {
+            System.err.println("Error in delete query.");
+            System.exit(0);
+        }
     }
 
     public static void main(String[] args) {
@@ -351,6 +321,8 @@ public class DBConnection
         try{
         db.Connect();
         db.loadRAM(c);
+        
+        db.removeShrt("cpu", "2016");
         c.printAll();
         db.closeall();
         
