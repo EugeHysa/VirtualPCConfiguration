@@ -33,9 +33,11 @@
             <%//Success of login
             if ((session.getAttribute("userid") == null) || (session.getAttribute("userid") == "")) {
             %>
+                <span style="display: inline;">
                 You are not logged in
                 <input type="button" value="SIGN-IN" name="sign-in" onclick="location.href='../../CustomerLogin.jsp'"/>
                 <input type="button" value="SIGN-UP" name="sign-up" onclick="location.href='../../reg.jsp'"/>
+                </span>
             <%} 
             else {%>
                 Welcome <%=session.getAttribute("userid")%>

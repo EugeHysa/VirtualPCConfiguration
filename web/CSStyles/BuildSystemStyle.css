@@ -117,6 +117,10 @@ label {
 }
 ul#progressbar li {
     display: inline;
+    background-image: url("Sfondo1.jpg");
+    background-repeat: no-repeat;
+    background-position: 0 .4em;
+    padding-left: .6em;
 }
 /*Buttons*/
 input[type=text],select{
