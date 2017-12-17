@@ -1,7 +1,6 @@
 package DatabaseElements;
 
 import Components.CPULoader;
-import Components.DBConnection;
 import Components.MBLoader;
 import Components.RAMLoader;
 import java.sql.*;

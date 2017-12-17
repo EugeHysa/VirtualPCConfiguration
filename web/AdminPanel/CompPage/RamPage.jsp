@@ -1,6 +1,6 @@
 <%@ page language="java" %>
 <%@ page import="java.sql.*"%>
-<%@ page import ="Components.*" %>
+<%@ page import="JSPElements.*"%>
 <%@ page contentType="te3xt7htarset=ISO-8859-5" %>
 <html>
     <head>

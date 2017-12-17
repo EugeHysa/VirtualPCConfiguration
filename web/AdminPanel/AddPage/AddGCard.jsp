@@ -1,5 +1,5 @@
 <%@ page import="Components.GCardLoader"%>
-<%@ page import="Components.DBConnection"%>
+<%@ page import="DatabaseElements.*"%>
 <%@ page language="java" %>
 <%@ page import="java.sql.*" %>
 <%@ page contentType="text/html; charset=ISO-8859-5" %>

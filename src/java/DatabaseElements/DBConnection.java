@@ -1,4 +1,11 @@
-package Components;
+package DatabaseElements;
+import Components.CPULoader;
+import Components.CaseLoader;
+import Components.GCardLoader;
+import Components.HDriveLoader;
+import Components.MBLoader;
+import Components.PSLoader;
+import Components.RAMLoader;
 import java.sql.*;
 
 public class DBConnection 

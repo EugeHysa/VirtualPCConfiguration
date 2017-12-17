@@ -1,0 +1,50 @@
+            /*Font Import*/
+            @import "http://fonts.googleapis.com/css?family=Droid+Serif";
+            /*Pagina*/
+            html { width: 100%; height: 100%; height: auto; }
+            /*Page*/
+            body {
+                background-image: url("../../CSStyles/Sfondo1.jpg");
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                background-attachment: fixed;
+            }
+            /*Grid*/
+            .grid {
+            display: grid;
+            grid-template-columns: 10% 15% 65% 10%;
+            grid-template-rows: 2% 18% 10% 60% 10%;
+            grid-template-areas:
+                ". . . ."
+                ". header header ."
+                ". navbar navbar ."
+                ". content content ."
+                ". footer footer .";
+            }
+            .header {
+                grid-area: header;
+                background-color: #74AFAD;
+                font-family: bold;
+                color: white;
+            }
+            .navbar {
+                grid-area: navbar;
+                background-color: #558C89;
+                text-align: right;
+                color: #D9853B;
+            }
+            .sidebar {
+                grid-area: sidebar;
+                background-color: #ECECEA;
+            }
+            .content {
+                grid-area: content;
+                width: auto;
+                background-color: #ECECEA;
+            }
+            .footer {
+                grid-area: footer;
+                background-color: #558C89;
+                text-align: right;
+                color: #D9853B;
+            }

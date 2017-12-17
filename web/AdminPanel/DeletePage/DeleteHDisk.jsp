@@ -1,11 +1,5 @@
-<%@page import="Components.DBConnection"%>
+<%@ page import="DatabaseElements.*"%>
 <%@page import="java.sql.SQLException"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="java.sql.Connection"%>
-
 
 <html>
 <head>

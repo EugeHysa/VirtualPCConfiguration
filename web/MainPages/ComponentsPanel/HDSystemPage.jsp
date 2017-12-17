@@ -1,3 +1,4 @@
+<%@ page import="JSPElements.*"%>
 <%@ page import="Components.*"%>
 <%@ page language="java" %>
 <%@ page import="java.sql.*" %>

@@ -1,5 +1,5 @@
+<%@ page import="JSPElements.*"%>
 <%@ page import="Components.*"%>
-<%@ page import="DatabaseElements.*"%>
 <%@ page language="java" %>
 <%@ page import="java.sql.*" %>
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
