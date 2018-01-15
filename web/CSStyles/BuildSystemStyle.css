@@ -115,11 +115,13 @@ label {
 #active1{
     color: #D9853B;
 }
+ul#progressbar{
+    align-content: center;
+    /*align-items: center;
+    align-self: center;*/
+}
 ul#progressbar li {
     display: inline;
-    background-image: url("Sfondo1.jpg");
-    background-repeat: no-repeat;
-    background-position: 0 .4em;
     padding-left: .6em;
 }
 /*Buttons*/

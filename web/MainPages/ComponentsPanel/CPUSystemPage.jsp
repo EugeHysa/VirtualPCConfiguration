@@ -5,7 +5,6 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     ConfigurationSave confSave = (ConfigurationSave) session.getAttribute("confSave");
-    
     String mbcod = request.getParameter("mbCod");
     request.getSession().setAttribute("mbCod", mbcod);
     Double price = Double.parseDouble(request.getParameter("price"));

@@ -60,13 +60,13 @@
             <div class="content">
                 <!-- Progressbar -->
                 <ul id="progressbar">
-                    <li id="active1">Motherboard</li>
-                    <li>Cpu</li>
-                    <li>Ram</li>
-                    <li>Graphic Card</li>
-                    <li>Hard Disk</li>
-                    <li>Power Supply</li>
-                    <li>Case</li>
+                    <li id="active1"><img src="../../CSStyles/IconComponents/Processor-64.png"> Motherboard</li>
+                    <li><img src="../../CSStyles/IconComponents/vector_373_08-64.png">Cpu</li>
+                    <li><img src="../../CSStyles/IconComponents/ram-64.png">Ram</li>
+                    <li><img src="../../CSStyles/IconComponents/graphic_card-64.png">Graphic Card</li>
+                    <li><img src="../../CSStyles/IconComponents/hard-disk-64.png">Hard Disk</li>
+                    <li><img src="../../CSStyles/IconComponents/plug-64.png">Power Supply</li>
+                    <li><img src="../../CSStyles/IconComponents/vector_373_24-64.png">Case</li>
                 </ul>
                 <!-- Loading Motherboard components in a table-->
                 <%
@@ -104,6 +104,9 @@
                             document.getElementById("price").value = this.cells[9].innerHTML;
                             document.getElementById("priceField").value = this.cells[9].innerHTML;
                             document.getElementById("nextbtn").disabled = false;
+                            
+                            
+                            
                             //urlForward="CPUSystemPage.jsp?cod=" + this.cells[10].innerHTML +"&priceField="+ this.cells[9].innerHTML;
                         };
                     }
