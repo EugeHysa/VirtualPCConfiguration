@@ -17,4 +17,4 @@
         response.sendRedirect("CustomerLogin.jsp");
     }
 %>
-<script>window.history.go(-2)</script>
+<script>window.history.go(-2);</script>

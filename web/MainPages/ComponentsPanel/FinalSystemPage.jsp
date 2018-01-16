@@ -45,10 +45,13 @@
         psField = new ComponentParser().getComponent("POWER_SUPPLY", pscod);
     }
     
-    String casecod = (String) request.getSession().getAttribute("caseCod");
+    String casecod = (String) request.getParameter("caseCod");
+    
+    request.getSession().setAttribute("caseCod", casecod);
+    
     String caseField = null;
     if(casecod!=null){
-        caseField = new ComponentParser().getComponent("CASE", casecod);
+        caseField = new ComponentParser().getComponent("PCCASE", casecod);
     }
     
     Double price = Double.parseDouble(request.getParameter("price"));
@@ -90,7 +93,7 @@
                         <tr><label>Price:</label><input type="text" id="priceField" value="<% if(price!=null) out.print(price); %>" disabled="disabled"><br></tr>
                     </table>
                 </p>
-                <button class="btn"><span>Save it!</span></button><br>
+                <form action="AddBuild.jsp" method="post"><button class="btn"><span>Save it!</span><br></button></form>
                 <a href="javascript:history.go(-1)" onMouseOver="document.referrer; return true;"><input type="button" value="Previous"></a>
                 </center>
             </div>

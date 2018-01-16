@@ -18,4 +18,4 @@
         out.println("Invalid password <a href='CustomerLogin.jsp'>try again</a>");
     }
 %>
-<script>window.history.go(-2)</script>
+<script>window.history.go(-2);</script>

@@ -131,8 +131,8 @@
                 }
             </script>
             <form action="FinalSystemPage.jsp" method="POST">
-                <input type="hidden" id="caseCod" name="caseCod"/>
-                <input type="hidden" id="price" name="price"/>
+                <input type="text" id="caseCod" name="caseCod"/>
+                <input type="hidden" id="price" name="price" value="<% if(price!=null) out.print(price); %>"/>
                 <input type="submit" value="Next"/>
             </form>
             <a href="javascript:history.go(-1)" onMouseOver="document.referrer; return true;"><input type="button" value="Previous"></a>
