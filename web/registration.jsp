@@ -13,9 +13,8 @@
     int i = st.executeUpdate("insert into customerlogin (USERNAME, PASS) values ('" + user + "','" + pwd + "')");
     if (i > 0) {
         session.setAttribute("userid", user);
-        response.sendRedirect("RegSuccessful.jsp");
-        out.print("Registration Successfull!"+"<a href='CustomerLogin.jsp'>Go to Login</a>");
     } else {
         response.sendRedirect("CustomerLogin.jsp");
     }
 %>
+<script>window.history.go(-2)</script>

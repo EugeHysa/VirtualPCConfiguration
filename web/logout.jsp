@@ -1,7 +1,6 @@
 <%@ page language="java" %>
-
 <%
-session.setAttribute("userid", null);
-session.invalidate();
-response.sendRedirect("index.html");
+    session.setAttribute("userid", null);
+    session.invalidate();
 %>
+<script>window.history.go(-2)</script>

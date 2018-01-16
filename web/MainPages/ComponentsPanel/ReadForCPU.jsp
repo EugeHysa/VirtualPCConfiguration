@@ -3,14 +3,6 @@
 <%@ page language="java" %>
 <%@ page import="java.sql.*" %>
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
-
-
-
-
-
-
-
-
 <%
     ConfigurationSave confSave = (ConfigurationSave) session.getAttribute("confSave");
     

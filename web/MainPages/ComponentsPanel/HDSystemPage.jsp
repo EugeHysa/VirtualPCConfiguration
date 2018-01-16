@@ -4,7 +4,7 @@
 <%@ page import="java.sql.*" %>
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    ConfigurationSave confSave = (ConfigurationSave) request.getAttribute("confSave");
+    ConfigurationSave confSave = (ConfigurationSave) session.getAttribute("confSave");
     String mbcod = (String) request.getSession().getAttribute("mbCod");
     String mbField = null;
     if(mbcod!=null)
@@ -17,6 +17,7 @@
     {
         cpuField = new ComponentParser().getComponent("CPU", cpucod);
     }
+
     String ramcod = (String) request.getSession().getAttribute("ramCod");
     String ramField = null;
     if(ramcod!=null)
@@ -25,9 +26,9 @@
     }
     
     String gccod = request.getParameter("gcCod");
-    request.getSession().setAttribute("gcCod", gccod);
+    request.getSession().setAttribute("gcCod",gccod);
     //confSave.setGCCod(gccod);
-    //session.setAttribute("confSave", confSave);
+    //session.setAttribute("confSave",confsave);
     String gcField = null;
     if(gccod!=null)
     {
