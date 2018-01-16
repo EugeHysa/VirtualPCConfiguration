@@ -18,3 +18,9 @@ GCOD varchar(5) REFERENCES GRAPHICS_CARD(COD),
 HCOD varchar(5) REFERENCES HDRIVE (COD),
 PCOD varchar(5) REFERENCES POWER_SUPPLY (COD),
 CSCOD varchar(5) REFERENCES CASE1 (COD));
+
+
+
+create table SAVES (
+SAVECOD int (5) primary key auto_increment,
+PURCOD int(5) REFERENCES PURCHASES(COD));
