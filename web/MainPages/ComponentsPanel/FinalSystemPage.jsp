@@ -46,7 +46,6 @@
     }
     
     String casecod = (String) request.getParameter("caseCod");
-    
     request.getSession().setAttribute("caseCod", casecod);
     
     String caseField = null;
