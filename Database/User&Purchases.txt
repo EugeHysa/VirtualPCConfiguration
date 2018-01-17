@@ -2,8 +2,8 @@ create table CustomerLogin (USERNAME varchar (20),
 PASS varchar (20),
 EMAIL varchar (20),
 ADDRESS varchar (20),
-USERSAVE int (11) references SAVES (SAVECOD),
-primary key (USERNAME, PASS)
+USERSAVE int (11) auto_increment,
+primary key (USERSAVE, USERNAME, PASS)
 );
 
 
@@ -22,5 +22,5 @@ CSCOD varchar(5) REFERENCES CASE1 (COD));
 
 
 create table SAVES (
-SAVECOD int (5) primary key auto_increment,
+SAVECOD int (5) REFERENCES CustomerLogin(USERSAVE),
 PURCOD int(5) REFERENCES PURCHASES(COD));
