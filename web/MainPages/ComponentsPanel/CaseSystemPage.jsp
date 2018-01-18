@@ -127,13 +127,14 @@
                         document.getElementById("priceField").value = (parseFloat(document.getElementById("casePrice").value)+parseFloat(this.cells[6].innerHTML)).toFixed(2);
                         document.getElementById("caseCod").value = this.cells[7].innerHTML;
                         document.getElementById("price").value = document.getElementById("priceField").value;
+                        document.getElementById("nextbtn").disabled = false;
                      };
                 }
             </script>
             <form action="FinalSystemPage.jsp" method="POST">
                 <input type="hidden" id="caseCod" name="caseCod"/>
                 <input type="hidden" id="price" name="price" value="<% if(price!=null) out.print(price); %>"/>
-                <input type="submit" value="Next"/>
+                <input type="submit" disabled="" id="nextbtn" value="Next"/>
             </form>
             <a href="javascript:history.go(-1)" onMouseOver="document.referrer; return true;"><input type="button" value="Previous"></a>
         </div>

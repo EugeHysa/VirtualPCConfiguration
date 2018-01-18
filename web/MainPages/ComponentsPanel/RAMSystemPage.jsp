@@ -62,7 +62,7 @@
         </div>
         <div class="sidebar">
             <table id="configTable" border="0">
-                <input type="hidden" id="temp" name="temp" value="<% out.print(cpucod); %>">
+                <!--input type="hidden" id="temp" name="temp" value="<% out.print(cpucod); %>"-->
                 <tr><label>Motherboard:</label><input type="text" id="mbField" value ="<% out.print(brand + " " + model); %>" disabled="disabled"></tr><br>
                 <tr><label>Cpu:</label><input type="text" id="cpuField" value="<% out.print(cpuData.replace("-CC-", " ")); %>" disabled="disabled"><input type="text" class="hidden"  id="cpuPrice"></tr><br>
                 <tr><label>Ram:</label><input type="text" id="ramField" value="<% if(ramField!=null) out.print(ramField.replace("-CC-", " ")); %>" disabled="disabled"><input type="text" class="hidden" value="<%out.print(price);%>" id="ramPrice"></tr><br>
@@ -116,13 +116,14 @@
                         document.getElementById("priceField").value = (parseFloat(document.getElementById("ramPrice").value) + parseFloat(this.cells[8].innerHTML)).toFixed(2);
                         document.getElementById("ramCod").value = this.cells[9].innerHTML;
                         document.getElementById("price").value = document.getElementById("priceField").value;
+                        document.getElementById("nextbtn").disabled = false;
                     };
                 }
             </script>
             <form action="GCSystemPage.jsp" method="POST">
                 <input type="hidden" id="ramCod" name="ramCod"/>
                 <input type="hidden" id="price" name="price"/>
-                <input type="submit" value="Next"/>
+                <input type="submit" disabled="" id="nextbtn" value="Next"/>
             </form>
             <a href="javascript:history.go(-1)" onMouseOver="document.referrer; return true;"><input type="button" value="Previous"></a>
             <!--input  type="button" value="Previous" name="previous" onclick="location.href=urlBackward"/-->

@@ -116,13 +116,14 @@
                         document.getElementById("priceField").value = (parseFloat(document.getElementById("psPrice").value)+parseFloat(this.cells[7].innerHTML)).toFixed(2);
                         document.getElementById("psCod").value = this.cells[8].innerHTML;
                         document.getElementById("price").value = document.getElementById("priceField").value;
+                        document.getElementById("nextbtn").disabled = false;
                      };
                 }
             </script>
             <form action="CaseSystemPage.jsp" method="POST">
                 <input type="hidden" id="psCod" name="psCod"/>
                 <input type="hidden" id="price" name="price"/>
-                <input type="submit" value="Next"/>
+                <input type="submit" disabled="" id="nextbtn" value="Next"/>
             </form>
             <a href="javascript:history.go(-1)" onMouseOver="document.referrer; return true;"><input type="button" value="Previous"></a>
 	</div>

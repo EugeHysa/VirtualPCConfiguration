@@ -60,7 +60,8 @@
             </div>
             <div class="sidebar">
                 <table id="configTable" border="0">
-                    <input type="hidden" id="temp" name="temp" value="<% out.print(mbcod); %>">
+                    <!--input type="hidden" id="temp" name="temp" value="<%out.print(mbcod);%>"-->
+                
                     <tr><label>Motherboard:</label><input type="text" value="<% out.println(brand + " " + model); %>"  id="mbField" disabled="disabled"></input> </tr><br>
                     <tr><label>Cpu:</label><input type="text" id="cpuField" value='<% if(cpuField != null) out.print(cpuField.replace("-CC-", " ")); %>' disabled="disabled"><input type="text" class="hidden" value="<% out.print(price); %>" id="cpuPrice"></tr><br>
                     <tr><label>Ram:</label><input type="text" id="ramField" disabled="disabled"></tr><br>

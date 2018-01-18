@@ -35,7 +35,7 @@ public class DBConnection
             /*JAMES "root", "12345");*/
             /*ANTONINO "root", "Prove");*/
             /*GIOVANNA "root", "Giovanna26");*/
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/virtualconfiguration", "root", "12345");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/virtualconfiguration", "root", "Prove");
             mystmt = conn.createStatement();
             }
         catch(ClassNotFoundException ex)

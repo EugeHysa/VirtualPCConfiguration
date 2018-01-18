@@ -71,6 +71,7 @@
                 <!-- Loading Motherboard components in a table-->
                 <%
                     out.println(new HTMLTableCreator().createMotherboard(false));
+                    
                 %>
                 <!--Sending data to next page-->
                 <script>
@@ -89,6 +90,7 @@
                     {
                         tableMB.rows[a].onclick = function()
                         {
+                             
                             //Remove the previous selected row
                             if (typeof mbIndex !== "undefined")
                             {

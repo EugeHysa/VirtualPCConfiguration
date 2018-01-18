@@ -30,7 +30,7 @@ public class DBFilters extends DBConnection {
     public CPULoader iSelected2(String selectedBrand, String selectedModel) throws SQLException
     {
         CPULoader cpu = new CPULoader();
-        res = stmt.executeQuery("select CPU.* from MOTHERBOARD,CPU where SOCKET_CPU=CPUSOCKET and MOTHERBOARD.BRAND = '"+ selectedBrand + "' and MOTHERBOARD.MODEL = '" + selectedModel + "'");
+        res = stmt.executeQuery("select CPU.* from MOTHERBOARD,CPU where SOCKET_CPU=CPU.SOCKET and MOTHERBOARD.BRAND = '"+ selectedBrand + "' and MOTHERBOARD.MODEL = '" + selectedModel + "'");
         while(res.next())
             {
                 cpu.fillLoader(res.getInt(1), res.getString(2), res.getString(3), res.getString(4), res.getDouble(5), res.getInt(6), res.getInt(7),  res.getDouble(8));
@@ -41,7 +41,7 @@ public class DBFilters extends DBConnection {
     public CPULoader cpuFiltered(String cod) throws SQLException
     {
         CPULoader cpu = new CPULoader();
-        res = stmt.executeQuery("select CPU.* from MOTHERBOARD,CPU where SOCKET_CPU=CPUSOCKET and MOTHERBOARD.COD = '"+ Integer.parseInt(cod) + "'");
+        res = stmt.executeQuery("select CPU.* from MOTHERBOARD,CPU where SOCKET_CPU=CPU.SOCKET and MOTHERBOARD.COD = '"+ Integer.parseInt(cod) + "'");
         while(res.next())
             {
                 cpu.fillLoader(res.getInt(1), res.getString(2), res.getString(3), res.getString(4), res.getDouble(5), res.getInt(6), res.getInt(7),  res.getDouble(8));

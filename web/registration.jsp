@@ -1,20 +1,25 @@
 <%@ page language="java" %>
+<%@ page import ="DatabaseElements.*" %>
 <%@ page import ="java.sql.*" %>
 <%
     String user = request.getParameter("uname");    
     String pwd = request.getParameter("pass");
-    Class.forName("com.mysql.jdbc.Driver");
-    /*JAMES "root", "12345");*/
-    /*ANTONINO "root", "Prove");*/
-    /*GIOVANNA "root", "Giovanna26");*/
-    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/virtualconfiguration","root", "12345");
-    Statement st = con.createStatement();
+    String email = request.getParameter("email");
+    String addr = request.getParameter("address");
     
-    int i = st.executeUpdate("insert into customerlogin (USERNAME, PASS) values ('" + user + "','" + pwd + "')");
-    if (i > 0) {
-        session.setAttribute("userid", user);
-    } else {
-        response.sendRedirect("CustomerLogin.jsp");
+    DBUserHandler db = new DBUserHandler();
+    
+    
+    if(db.addUser(user, pwd, email, addr)==true)
+    {
+    session.setAttribute("userid", user);
+    response.sendRedirect("./MainPages/ComponentsPanel/MBSystemPage.jsp");    
     }
+    else
+    {
+    
+    response.sendRedirect("ExistingUserError.jsp");   
+    }
+    
+        
 %>
-<script>window.history.go(-2);</script>

@@ -21,7 +21,7 @@
     /*Inserimento componenti nella tabella purchase*/
     try{
         Class.forName("com.mysql.jdbc.Driver");
-        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/virtualconfiguration", "root", "12345");
+        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/virtualconfiguration", "root", "Prove");
         mystmt = conn.createStatement();
         
         int ress;

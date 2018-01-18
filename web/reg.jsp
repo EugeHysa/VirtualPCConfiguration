@@ -15,6 +15,8 @@
                     <h1>Create an Account</h1>
                     <input type="text" name="uname" id="uname" placeholder="Username..."/>
                     <input type="password" name="pass" id="pass" placeholder="Password..."/>
+                    <input type="text" name="email" id="email" placeholder="E-Mail..."/>
+                    <input type="text" name="address" id="address" placeholder="Address..."/>
                     <button>Sign Up</button>
                     <p class="message">Already registered?! <a href="CustomerLogin.jsp">Sign In</a></p>
                     <p class="message"><a href="index.html">Go back home! <img src="./CSStyles/home.png" alt="Go back home!" width="16" height="16"></a></p>

@@ -2,5 +2,5 @@
 <%
     session.setAttribute("userid", null);
     session.invalidate();
+    response.sendRedirect("index.html");
 %>
-<script>window.history.go(-1)</script>

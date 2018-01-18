@@ -102,13 +102,14 @@
                         document.getElementById("priceField").value = (parseFloat(document.getElementById("gcPrice").value) + parseFloat(this.cells[8].innerHTML)).toFixed(2);
                         document.getElementById("gcCod").value = this.cells[9].innerHTML;
                         document.getElementById("price").value = document.getElementById("priceField").value;
+                        document.getElementById("nextbtn").disabled = false;
                      };
                 }
             </script>
             <form action="HDSystemPage.jsp" method="POST">
                 <input type="hidden" id="gcCod" name="gcCod"/>
                 <input type="hidden" id="price" name="price"/>
-                <input type="submit" value="Next"/>
+                <input type="submit" disabled="" id="nextbtn" value="Next"/>
             </form>
             <a href="javascript:history.go(-1)" onMouseOver="document.referrer; return true;"><input type="button" value="Previous"></a>
         </div>
