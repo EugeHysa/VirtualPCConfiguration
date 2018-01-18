@@ -18,11 +18,11 @@
     Connection conn;
     Statement mystmt;
     ResultSet res, res2;
+    DBConnection db;
     /*Inserimento componenti nella tabella purchase*/
     try{
-        Class.forName("com.mysql.jdbc.Driver");
-        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/virtualconfiguration", "root", "Prove");
-        mystmt = conn.createStatement();
+        db = new DBConnection();
+        mystmt = db.Connect();
         
         int ress;
         ress = mystmt.executeUpdate("insert into purchases (MCOD, CPUCOD, RCOD, GCOD, HCOD, PCOD, CSCOD) values('"+mbcod+"', '"+cpucod+"', '"+ramcod+"', '"+gccod+"', '"+hdcod+"', '"+pscod+"', '"+casecod+"')");   
@@ -40,14 +40,32 @@
         /*Estrapolare codice customer*/
         String userid = (String) request.getSession().getAttribute("userid");
         res2 = mystmt.executeQuery("select USERSAVE from CustomerLogin where USERNAME = '"+ userid +"' ");
-        String CusCod = res2.getString(1);
+        String CusCod = "";
+        
+        while(res2.next())
+        {
+            CusCod = res2.getString(1);
+        }
+        
+        
+        
         
         /*Riempire tabella congiunzione con codice customer e codice purchase*/
         int ress2;
         ress2 = mystmt.executeUpdate("insert into SAVES (SAVECOD, PURCOD) values('"+ CusCod +"', '"+ actualCod +"') ");   
+        %>
+        
+        
+        
+        <script>window.location.replace("../../index.html");</script>
+        
+        
+        <%
+        
+        
+        
     }
     catch(SQLException ex){
-        out.println("Connessione fallita.");
+        out.println("You must login first <a href='javascript:history.go(-1);'> Try again </a>");
     }
 %>
-<script>window.location.replace("../../index.html");</script>
