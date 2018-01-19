@@ -72,7 +72,7 @@
                             <td><input type="text" name="price"></td>
                         </tr>
                         <tr>
-                            <td><input type="submit" value="Aggiungi"></td>
+                            <td><input type="submit" value="Add"></td>
                         </tr>
                     </table>
                     </form>
