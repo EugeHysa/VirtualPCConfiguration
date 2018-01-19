@@ -46,24 +46,12 @@
         {
             CusCod = res2.getString(1);
         }
-        
-        
-        
-        
         /*Riempire tabella congiunzione con codice customer e codice purchase*/
         int ress2;
         ress2 = mystmt.executeUpdate("insert into SAVES (SAVECOD, PURCOD) values('"+ CusCod +"', '"+ actualCod +"') ");   
         %>
-        
-        
-        
         <script>window.location.replace("../../index.html");</script>
-        
-        
         <%
-        
-        
-        
     }
     catch(SQLException ex){
         out.println("You must login first <a href='javascript:history.go(-1);'> Try again </a>");

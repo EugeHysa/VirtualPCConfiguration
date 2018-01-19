@@ -69,13 +69,13 @@
         <div class="content">
             <!-- Progressbar -->
             <ul id="progressbar">
-                <li>Motherboard</li>
-                <li>Cpu</li>
-                <li>Ram</li>
-                <li id="active1">Graphic Card</li>
-                <li>Hard Disk</li>
-                <li>Power Supply</li>
-                <li>Case</li>
+                    <li><img class="noactive" src="../../CSStyles/IconComponents/Processor-64.png"> Motherboard</li>
+                    <li><img class="noactive" src="../../CSStyles/IconComponents/vector_373_08-64.png">Cpu</li>
+                    <li><img class="noactive" src="../../CSStyles/IconComponents/ram-64.png">Ram</li>
+                    <li id="active1"><img src="../../CSStyles/IconComponents/graphic_card-64.png">Graphic Card</li>
+                    <li><img class="noactive" src="../../CSStyles/IconComponents/hard-disk-64.png">Hard Disk</li>
+                    <li><img class="noactive" src="../../CSStyles/IconComponents/plug-64.png">Power Supply</li>
+                    <li><img class="noactive" src="../../CSStyles/IconComponents/vector_373_24-64.png">Case</li>
             </ul>
             <!-- Loading GCard components in a table-->
             <%

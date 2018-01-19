@@ -26,6 +26,10 @@
         brand = input[0];
         model = input[1];
     }
+    
+    
+    
+    System.out.println(brand + " " + model);
     //CPU data init. for return case
     String cpuField=null;
     String cpucod = null;
@@ -61,7 +65,6 @@
             <div class="sidebar">
                 <table id="configTable" border="0">
                     <!--input type="hidden" id="temp" name="temp" value="<%out.print(mbcod);%>"-->
-                
                     <tr><label>Motherboard:</label><input type="text" value="<% out.println(brand + " " + model); %>"  id="mbField" disabled="disabled"></input> </tr><br>
                     <tr><label>Cpu:</label><input type="text" id="cpuField" value='<% if(cpuField != null) out.print(cpuField.replace("-CC-", " ")); %>' disabled="disabled"><input type="text" class="hidden" value="<% out.print(price); %>" id="cpuPrice"></tr><br>
                     <tr><label>Ram:</label><input type="text" id="ramField" disabled="disabled"></tr><br>
@@ -75,13 +78,13 @@
             <div class="content">
                 <!-- Progressbar -->
                 <ul id="progressbar">
-                    <li>Motherboard</li>
-                    <li id="active1">Cpu</li>
-                    <li>Ram</li>
-                    <li>Graphic Card</li>
-                    <li>Hard Disk</li>
-                    <li>Power Supply</li>
-                    <li>Case</li>
+                    <li><img class="noactive" src="../../CSStyles/IconComponents/Processor-64.png"> Motherboard</li>
+                    <li id="active1"><img src="../../CSStyles/IconComponents/vector_373_08-64.png">Cpu</li>
+                    <li><img class="noactive" src="../../CSStyles/IconComponents/ram-64.png">Ram</li>
+                    <li><img class="noactive" src="../../CSStyles/IconComponents/graphic_card-64.png">Graphic Card</li>
+                    <li><img class="noactive" src="../../CSStyles/IconComponents/hard-disk-64.png">Hard Disk</li>
+                    <li><img class="noactive" src="../../CSStyles/IconComponents/plug-64.png">Power Supply</li>
+                    <li><img class="noactive" src="../../CSStyles/IconComponents/vector_373_24-64.png">Case</li>
                 </ul>
                 <!-- Loading CPU components in a table-->
                 <%

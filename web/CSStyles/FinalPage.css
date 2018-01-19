@@ -11,15 +11,15 @@ body {
 }
 /*Grid*/
 .grid {
-display: grid;
-grid-template-columns: 10% 15% 65% 10%;
-grid-template-rows: 2% 18% 10% 60% 10%;
-grid-template-areas:
-    ". . . ."
-    ". header header ."
-    ". navbar navbar ."
-    ". content content ."
-    ". footer footer .";
+    display: grid;
+    grid-template-columns: 10% 15% 65% 10%;
+    grid-template-rows: 2% 5% 10% 73% 10%;
+    grid-template-areas:
+        ". . . ."
+        ". header header ."
+        ". navbar navbar ."
+        ". content content ."
+        ". footer footer .";
 }
 .header {
     grid-area: header;
@@ -33,18 +33,11 @@ grid-template-areas:
     text-align: right;
     color: #D9853B;
 }
-.sidebar {
-    grid-area: sidebar;
-    background-color: #ECECEA;
-}
 .content {
     grid-area: content;
     width: auto;
     background-color: #ECECEA;
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 30%;
 }
 .footer {
     grid-area: footer;
@@ -52,16 +45,23 @@ grid-template-areas:
     text-align: right;
     color: #D9853B;
 }
+/*Etichette*/
+label{
+    color: #74AFAD;
+    font-weight: bold;
+    display: block;
+    width: 150px;
+    float: left;
+}
+/*Input Text*/
+input[type=text]{
+    width: 200px;
+}
 /*Bottone Save*/
-.description, .link {
+.link {
   font-family: 'Amatic SC', cursive;
   text-align: center;
 }
-
-.description {
-    font-size: 35px;
-}
-
 .btn {
   border: none;
   display: block;

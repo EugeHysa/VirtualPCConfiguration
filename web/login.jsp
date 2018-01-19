@@ -8,7 +8,7 @@
     /*JAMES "root", "12345");*/
     /*ANTONINO "root", "Prove");*/
     /*GIOVANNA "root", "Giovanna26");*/
-    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/virtualconfiguration","root", "Prove");
+    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/virtualconfiguration","root", "12345");
     Statement st = con.createStatement();
     ResultSet rs;
     rs = st.executeQuery("select * from CustomerLogin where USERNAME='" + userid + "' and PASS='" + pwd + "'");

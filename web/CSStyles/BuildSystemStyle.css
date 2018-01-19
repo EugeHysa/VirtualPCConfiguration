@@ -115,15 +115,21 @@ label {
 #active1{
     color: #D9853B;
 }
+.noactive{
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
 ul#progressbar{
     align-content: center;
     /*align-items: center;
     align-self: center;*/
 }
 ul#progressbar li {
+    /*float: left;*/
     display: inline;
     padding-left: .6em;
 }
+
 /*Buttons*/
 input[type=text],select{
     width:100%;
