@@ -12,7 +12,7 @@
         <div class="login-page">
             <div class="form">
                 <h1>Configuration Saved</h1>
-                <a href="index.html">Start a new Configuration</a><br>
+                <a href="MainPages/ComponentsPanel/MBSystemPage.jsp">Start a new Configuration</a><br>
                 <a href="ShowBuild.jsp">Show your building</a>
             </div>
         </div>

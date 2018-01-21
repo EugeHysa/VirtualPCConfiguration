@@ -4,6 +4,7 @@
 <%@ page import="java.sql.*" %>
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%
+    
     ConfigurationSave confSave = new ConfigurationSave();
     session.setAttribute("confSave", confSave);
     
@@ -14,11 +15,38 @@
         mbcod = (String) request.getSession().getAttribute("mbCod");
         price = (Double) request.getSession().getAttribute("price");
     }
-    String retStr = null;
+    String mbField = null;
     if(mbcod != null){
-    retStr = new ComponentParser().getComponent("MOTHERBOARD", mbcod);                                
+    mbField = new ComponentParser().getComponent("MOTHERBOARD", mbcod);                                
     }
+    
+
+
+
 %>
+
+<%
+    /*
+    String mbcod = null;
+    String mbField = null;
+    Double price = null;
+    if(new CookiesHandler().isValidCookie("MBCOD", request)==true)
+    {
+        mbcod = new CookiesHandler().getCookie("MBCOD", request);
+        price = Double.parseDouble(new CookiesHandler().getCookie("price", request));
+    }
+    
+    if(mbcod != null){
+    mbField = new ComponentParser().getComponent("MOTHERBOARD", mbcod);                                
+    }
+    
+    */
+    
+%>
+
+
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -47,7 +75,7 @@
             </div>
             <div class="sidebar">
                 <table id="configTable" border="0">
-                    <tr><label>Motherboard:</label><input type="text" id="mbField" disabled="disabled" value="<% String o = "";  if((o=retStr)!=null){ out.print(o.replace("-CC-", " "));}else{out.print("");} %>"></tr><br>
+                    <tr><label>Motherboard:</label><input type="text" id="mbField" disabled="disabled" value="<% if(mbField!=null) out.print(mbField.replace("-CC-", " "));%>"></tr><br>
                     <tr><label>Cpu:</label><input type="text" id="cpuField" disabled="disabled"></tr><br>
                     <tr><label>Ram:</label><input type="text" id="ramField" disabled="disabled"></tr><br>
                     <tr><label>Graphic Card:</label><input type="text" id="gcField" disabled="disabled"></tr><br>
@@ -107,7 +135,8 @@
                             document.getElementById("priceField").value = this.cells[9].innerHTML;
                             document.getElementById("nextbtn").disabled = false;
                             
-                            
+                            //cookies
+                            document.cookie = "MBCOD="+document.getElementById("mbCod").value;
                             
                             //urlForward="CPUSystemPage.jsp?cod=" + this.cells[10].innerHTML +"&priceField="+ this.cells[9].innerHTML;
                         };
