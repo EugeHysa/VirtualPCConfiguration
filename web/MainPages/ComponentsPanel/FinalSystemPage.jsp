@@ -74,7 +74,7 @@
                     <input type="button" value="SIGN-UP" name="sign-up" onclick="location.href='../../reg.jsp'"/>
                 <%} 
                 else {%>
-                    Welcome <%=session.getAttribute("userid")%>
+                    Welcome <a href="./../../UserManagment.jsp" > <%=session.getAttribute("userid")%> </a>
                     <input type="button" value="LOGOUT" name="sign-in" onclick="location.href='../../logout.jsp'"/>
                 <%}%>
             </div>

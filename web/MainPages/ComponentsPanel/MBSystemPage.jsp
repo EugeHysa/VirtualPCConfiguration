@@ -4,7 +4,6 @@
 <%@ page import="java.sql.*" %>
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    
     ConfigurationSave confSave = new ConfigurationSave();
     session.setAttribute("confSave", confSave);
     
@@ -19,10 +18,6 @@
     if(mbcod != null){
     mbField = new ComponentParser().getComponent("MOTHERBOARD", mbcod);                                
     }
-    
-
-
-
 %>
 
 <%
@@ -43,10 +38,6 @@
     */
     
 %>
-
-
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -69,7 +60,7 @@
                 </span>
             <%} 
             else {%>
-                Welcome <%=session.getAttribute("userid")%>
+            Welcome <a href="./../../UserManagment.jsp" > <%=session.getAttribute("userid")%> </a>
                 <input type="button" value="LOGOUT" name="sign-in" onclick="location.href='../../logout.jsp'"/>
                 <%}%>
             </div>
@@ -99,7 +90,6 @@
                 <!-- Loading Motherboard components in a table-->
                 <%
                     out.println(new HTMLTableCreator().createMotherboard(false));
-                    
                 %>
                 <!--Sending data to next page-->
                 <script>
