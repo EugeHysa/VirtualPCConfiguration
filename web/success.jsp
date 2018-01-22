@@ -1,5 +1,5 @@
 <%@ page language="java" %>
-
+session_start();
 <%
 if ((session.getAttribute("userid") == null) || (session.getAttribute("userid") == "")) {
 %>

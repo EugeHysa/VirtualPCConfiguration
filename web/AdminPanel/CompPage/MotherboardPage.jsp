@@ -38,43 +38,43 @@
                 <table id="insertTable" border="0">
                     <tr>
                         <td>Brand:</td>
-                        <td><input type="text" name="brand"></td>
+                        <td><input type="text" name="brand" required></td>
                     </tr>
                     <tr>
                         <td>Model:</td>
-                        <td><input type="text" name="model"></td>
+                        <td><input type="text" name="model" required></td>
                     </tr>
                     <tr>	
                         <td>Socket CPU:</td>
-                        <td><input type="text" name="socket_cpu"></td>
+                        <td><input type="text" name="socket_cpu" required></td>
                     </tr>
                     <tr>	
                         <td>Formfactor:</td>
-                        <td><input type="text" name="formfactor"></td>
+                        <td><input type="text" name="formfactor" required></td>
                     </tr>
                     <tr>	
                         <td>Chipset:</td>
-                        <td><input type="text" name="chipset"></td>
+                        <td><input type="text" name="chipset" required ></td>
                     </tr>
                     <tr>	
                         <td>RAM Slots:</td>
-                        <td><input type="text" name="ram_slots"></td>
+                        <td><input type="text" name="ram_slots" onBlur="isnum(this)" required></td>
                     </tr>
                     <tr>	
                         <td>RAM Type:</td>
-                        <td><input type="text" name="ram_type"></td>
+                        <td><input type="text" name="ram_type" required></td>
                     </tr>
                     <tr>	
                         <td>RAM max GB:</td>
-                        <td><input type="text" name="ram_max_gb" ></td>
+                        <td><input type="text" name="ram_max_gb" onBlur="isnum(this)" required></td>
                     </tr>
                     <tr>	
                         <td>TDP:</td>
-                        <td><input type="text" name="tdp"></td>
+                        <td><input type="text" name="tdp" onBlur="isnum(this)" required></td>
                     </tr>
                     <tr>	
                         <td>Price:</td>
-                        <td><input type="text" name="price"></td>
+                        <td><input type="text" name="price" onBlur="isnum(this)" required></td>
                     </tr>
                     <tr>
                         <td colspan="2"><center><input type="submit" value="Add"></center></td>
@@ -86,3 +86,16 @@
 	</div>
     </body>
 </html>
+
+ <script>
+    function isnum(error) {
+
+    if (isNaN(error.value) || parseInt(error.value)<0.0 || parseInt(error.value) > 9999.99999){
+        alert("Nel campo e' possibile immettere solo numeri!");
+        error.value="";
+        error.focus();
+    }
+
+    }
+
+</script>

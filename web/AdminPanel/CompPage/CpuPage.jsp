@@ -38,31 +38,31 @@
                 <table id="insertTable" border="0">
                     <tr>
                         <td>Brand:</td>
-                        <td><input type="text" name="brand"></td>
+                        <td><input type="text" name="brand" required></td>
                     </tr>
                     <tr>
                         <td>Model:</td>
-                        <td><input type="text" name="model"></td>
+                        <td><input type="text" name="model" required></td>
                     </tr>
                     <tr>	
                         <td>Socket:</td>
-                        <td><input type="text" name="socket"></td>
+                        <td><input type="text" name="socket" required></td>
                     </tr>
                     <tr>	
                         <td>Frequenza:</td>
-                        <td><input type="text" name="frequenza_GHZ"></td>
+                        <td><input type="text" name="frequenza_GHZ" onBlur="isnum(this)" required></td>
                     </tr>
                     <tr>	
                         <td>Cores:</td>
-                        <td><input type="text" name="cores"></td>
+                        <td><input type="text" name="cores" onBlur="isnum(this)" required></td>
                     </tr>
                     <tr>	
                         <td>TDP:</td>
-                        <td><input type="text" name="tdp"></td>
+                        <td><input type="text" name="tdp" onBlur="isnum(this)" required></td>
                     </tr>
                     <tr>	
                         <td>Price:</td>
-                        <td><input type="text" name="price"></td>
+                        <td><input type="text" name="price" onBlur="isnum(this)" required></td>
                     </tr>	
                     <tr>
                         <td><input type="submit" value="Add"></td>
@@ -73,3 +73,18 @@
 	</div>
     </body>
 </html>
+
+
+
+<script>
+    function isnum(error) {
+
+    if (isNaN(error.value) || parseInt(error.value)<0.0 || parseInt(error.value) > 9999.99999){
+        alert("Nel campo e' possibile immettere solo numeri!");
+        error.value="";
+        error.focus();
+    }
+
+    }
+
+</script>

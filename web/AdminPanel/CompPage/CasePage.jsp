@@ -37,31 +37,31 @@
                     <table id="insertTable" border="0">
                         <tr>
                             <td>Brand:</td>
-                            <td><input type="text" name="brand"></td>
+                            <td><input type="text" name="brand" required></td>
                         </tr>
                         <tr>
                             <td>Model:</td>
-                            <td><input type="text" name="model"></td>
+                            <td><input type="text" name="model" required></td>
                         </tr>
                         <tr>	
                             <td>Type:</td>
-                            <td><input type="text" name="type"></td>
+                            <td><input type="text" name="type" required></td>
                         </tr>
                         <tr>	
                             <td>Color:</td>
-                            <td><input type="text" name="color"></td>
+                            <td><input type="text" name="color" required></td>
                         </tr>
                         <tr>	
                             <td>MB_Comp:</td>
-                            <td><input type="text" name="mb_comp"></td>
+                            <td><input type="text" name="mb_comp" required></td>
                         </tr>
                         <tr>	
                             <td>Max_hd_Len:</td>
-                            <td><input type="text" name="max_hd_len"></td>
+                            <td><input type="text" name="max_hd_len" onBlur="isnum(this)" required></td>
                         </tr>
                         <tr>	
                             <td>Price:</td>
-                            <td><input type="text" name="price"></td>
+                            <td><input type="text" name="price"  required></td>
                         </tr>
                         <tr>
                             <td><input type="submit" value="Add"></td>
@@ -73,4 +73,13 @@
         </div>
     </body>
 </html>
+ <script>
+    function isnum(error) {
 
+    if (isNaN(error.value) || parseInt(error.value)<0.0 || parseInt(error.value) > 9999.99999){
+        alert("Nel campo e' possibile immettere solo numeri!");
+        error.value="";
+        error.focus();
+    }
+    }
+</script>
