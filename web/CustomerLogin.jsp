@@ -13,8 +13,9 @@
             <div class="form">
             <form class="login-form" method="post" action="login.jsp">
                 <h1>Login</h1>
-                <input type="text" name="uname" placeholder="Username..."/>
-                <input type="password" name="pass" placeholder="Password..."/>
+                <input type="hidden" name="uref" id="uref"/>
+                <input type="text" name="uname" id="uname" placeholder="Username..."/>
+                <input type="password" name="pass" id="pass" placeholder="Password..."/>
                 <button>Sign In</button>
                 <p class="message">Not registered?! <a href="reg.jsp">Create an account!</a></p>
                 <p class="message"><a href="index.html">Go back home! <img src="./CSStyles/home.png" alt="Go back home!" width="16" height="16"></a></p>
@@ -23,3 +24,6 @@
         </div>
     </body>
 </html>
+<script>
+    document.getElementById("uref").value = document.referrer;
+</script>
