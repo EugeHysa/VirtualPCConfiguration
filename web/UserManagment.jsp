@@ -31,7 +31,7 @@
                 <%}%>
             </div>
             <div class="content">
-                <p> User <%=session.getAttribute("userid")%> - Buildings</p>
+                <center><h1><p>User <%=session.getAttribute("userid")%> - Buildings</p></h1></center>
                 
                 <%
                     ConfigurationSave confSave = (ConfigurationSave) session.getAttribute("confSave");

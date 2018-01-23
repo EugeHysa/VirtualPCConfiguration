@@ -2,23 +2,10 @@
 <%@page import="JSPElements.*" %>
 
 <%
-    
-
-
     String str = "";
-    
-    str = new CookiesHandler().getCookie("n0nn", request);
+    str = new CookiesHandler().getCookie("nnn", request);
     System.out.println(str);
 %>
-
-
-
-
-
 <script>
-    
-    document.cookie = "nnn=vv";
-    
-    
-    
+    document.cookie = "nnn=000000";
 </script>

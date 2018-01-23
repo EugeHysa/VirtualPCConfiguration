@@ -20,24 +20,6 @@
     }
 %>
 
-<%
-    /*
-    String mbcod = null;
-    String mbField = null;
-    Double price = null;
-    if(new CookiesHandler().isValidCookie("MBCOD", request)==true)
-    {
-        mbcod = new CookiesHandler().getCookie("MBCOD", request);
-        price = Double.parseDouble(new CookiesHandler().getCookie("price", request));
-    }
-    
-    if(mbcod != null){
-    mbField = new ComponentParser().getComponent("MOTHERBOARD", mbcod);                                
-    }
-    
-    */
-    
-%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -60,7 +42,7 @@
                 </span>
             <%} 
             else {%>
-            Welcome <a href="./../../UserManagment.jsp" > <%=session.getAttribute("userid")%> </a>
+                Welcome <a href="./../../UserManagment.jsp" > <%=session.getAttribute("userid")%> </a>
                 <input type="button" value="LOGOUT" name="sign-in" onclick="location.href='../../logout.jsp'"/>
                 <%}%>
             </div>
@@ -127,7 +109,7 @@
                             
                             //cookies
                             document.cookie = "MBCOD="+document.getElementById("mbCod").value;
-                            
+                            document.cookie = "PRICE="+document.getElementById("priceField").value;
                             //urlForward="CPUSystemPage.jsp?cod=" + this.cells[10].innerHTML +"&priceField="+ this.cells[9].innerHTML;
                         };
                     }

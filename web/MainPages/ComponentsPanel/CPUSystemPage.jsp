@@ -5,10 +5,29 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     ConfigurationSave confSave = (ConfigurationSave) session.getAttribute("confSave");
-    String mbcod = request.getParameter("mbCod");
-    request.getSession().setAttribute("mbCod", mbcod);
-    Double price = Double.parseDouble(request.getParameter("price"));
+    String mbcod = "";
+    Double price = null;
     
+    /*if(request.getParameter("mbCod") != null){
+        mbcod = request.getParameter("mbCod");
+        request.getSession().setAttribute("mbCod", mbcod);
+    }*/
+    if(new CookiesHandler().getCookie("MBCOD", request)!=null)
+    {
+        mbcod = new CookiesHandler().getCookie("MBCOD", request);
+       
+    }
+
+    
+    /**/
+    if(request.getParameter("price") != null){
+        price = Double.parseDouble(request.getParameter("price"));
+        new Cookie("PRICE", request.getParameter("price"));
+    }
+    if(request.getParameter("price")==null)
+    {
+        price = Double.parseDouble(new CookiesHandler().getCookie("PRICE", request));
+    }
     confSave.setMBCod(mbcod);
     session.setAttribute("confSave", confSave);
     //request.getSession().setAttribute("price", price);
@@ -29,7 +48,7 @@
     
     
     
-    System.out.println(brand + " " + model);
+    //System.out.println(brand + " " + model);
     //CPU data init. for return case
     String cpuField=null;
     String cpucod = null;
@@ -88,7 +107,15 @@
                 </ul>
                 <!-- Loading CPU components in a table-->
                 <%
-                    out.print(new HTMLTableCreator().createCPU(false, brand, model));
+                    Boolean flagAdmin = true;
+                    if(flagAdmin == true)
+                    {
+                    out.print(new HTMLTableCreator().createCPU(false, flagAdmin, brand, model));
+                    }
+                    if(flagAdmin == false)
+                    {
+                    out.print(new HTMLTableCreator().createCPU(false, flagAdmin, brand, model));
+                    }
                 %>
                 <script>
                     var urlForward;
@@ -125,6 +152,9 @@
                             document.getElementById("priceField").value = (parseFloat(document.getElementById("cpuPrice").value) + parseFloat(this.cells[6].innerHTML)).toFixed(2);
                             document.getElementById("price").value = document.getElementById("priceField").value;
                             document.getElementById("nextbtn").disabled = false;
+                            
+                            document.cookie = "CPUCOD="+document.getElementById("cpuCod").value;
+                           document.cookie = "PRICE="+document.getElementById("priceField").value;
                             //urlForward="RAMSystemPage.jsp?mbcod="+ document.getElementById("temp").value +"&cpucod=" + this.cells[7].innerHTML +"&priceField="+ document.getElementById("priceField").value;
                         };
                     }

@@ -11,12 +11,28 @@
     {
         mbcod = (String) request.getSession().getAttribute("mbCod");
     }
+    if(request.getSession().getAttribute("mbCod")==null)
+    {
+        mbcod = new CookiesHandler().getCookie("MBCOD", request);
+       
+    }
+    
     String input [] = new ComponentParser().getComponent("MOTHERBOARD", mbcod).split("-CC-");
     String brand = input[0];
     String model = input[1];
     
-    String cpucod = request.getParameter("cpuCod");
-    request.getSession().setAttribute("cpuCod", cpucod);
+    String cpucod = null;
+    if(request.getSession().getAttribute("cpuCod")!=null)
+    {
+        cpucod = (String) request.getSession().getAttribute("cpuCod");
+    }
+    if(request.getSession().getAttribute("cpuCod")==null)
+    {
+        cpucod = new CookiesHandler().getCookie("CPUCOD", request);
+       
+    }
+    
+    //request.getSession().setAttribute("cpuCod", cpucod);
     
     confSave.setCPUCod(cpucod);
     session.setAttribute("confSave", confSave);
@@ -26,14 +42,21 @@
         cpuData = new ComponentParser().getComponent("CPU", cpucod);
     }
     
-    Double price = Double.parseDouble(request.getParameter("price"));
-    
+    Double price = null;
+    if(request.getParameter("price") != null){
+        price = Double.parseDouble(request.getParameter("price"));
+        new Cookie("PRICE", request.getParameter("price"));
+    }
+    if(request.getParameter("price")==null)
+    {
+        price = Double.parseDouble(new CookiesHandler().getCookie("PRICE", request));
+    }    
     String ramcod=null;
-    String ramField=null;
+    String ramField=null;/*
     if((ramcod = (String) request.getSession().getAttribute("ramCod"))!=null)
     {
         ramField = new ComponentParser().getComponent("RAM", ramcod);
-    }
+    }*/
     System.out.print("Finally "+ confSave.getMBCod() + " "+ confSave.getRAMCod() + " "+ confSave.getGCCod() + " "+ confSave.getPSCod() + " "+ confSave.getHDCod() + " "+ confSave.getPCCod() + " ");
 %>
 <!DOCTYPE html>
@@ -117,6 +140,8 @@
                         document.getElementById("ramCod").value = this.cells[9].innerHTML;
                         document.getElementById("price").value = document.getElementById("priceField").value;
                         document.getElementById("nextbtn").disabled = false;
+                        document.cookie = "RAMCOD=" + document.getElementById("ramCod").value;
+                        
                     };
                 }
             </script>
