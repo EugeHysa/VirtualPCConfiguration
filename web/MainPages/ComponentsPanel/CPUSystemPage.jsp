@@ -108,13 +108,12 @@
                 <!-- Loading CPU components in a table-->
                 <%
                     Boolean flagAdmin = true;
-                    if(flagAdmin == true)
-                    {
-                    out.print(new HTMLTableCreator().createCPU(false, flagAdmin, brand, model));
+                    /*Default TRUE = Compatibilità*/
+                    if(flagAdmin == true){
+                        out.print(new HTMLTableCreator().createCPU(false, flagAdmin, brand, model));
                     }
-                    if(flagAdmin == false)
-                    {
-                    out.print(new HTMLTableCreator().createCPU(false, flagAdmin, brand, model));
+                    if(flagAdmin == false){
+                        out.print(new HTMLTableCreator().createCPU(false, flagAdmin, brand, model));
                     }
                 %>
                 <script>

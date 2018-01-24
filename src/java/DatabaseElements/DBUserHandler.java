@@ -33,7 +33,6 @@ public class DBUserHandler extends DBConnection {
         return st;
     }
     
-    
     public Boolean checkUser(String name)
     {
         Boolean st = false;
@@ -46,8 +45,6 @@ public class DBUserHandler extends DBConnection {
                     st = true;
                 }
             }
-        
-            
         }
         catch(SQLException ex)
         {
@@ -56,6 +53,44 @@ public class DBUserHandler extends DBConnection {
         return st;
     }
     
+    public Boolean getStatusComp(){
+        Boolean status = true;
+        
+        try{
+            res = mystmt.executeQuery("select FLAG from ADMINCONTROL");
+            while(res.next())
+            {
+                if(res.getInt(1)==1) status = true;
+                if(res.getInt(1)==0) status = false;   
+            }
+        }
+        catch(SQLException e)
+        {
+            System.out.println(e);
+        }
+        
+        return status;
+    }
+    
+    public void setStatusComp(Boolean status)
+    {
+        try
+        {
+            if(status == false)
+            {
+                mystmt.executeUpdate("update ADMINCONTROL set FLAG = 0");
+            }
+            if(status == true)
+            {
+                mystmt.executeUpdate("update ADMINCONTROL set FLAG = 1");
+            }
+        }
+        catch(SQLException e)
+        {
+            
+        }
+        
+    }
     
     public static void main(String[] args)
     {
@@ -64,9 +99,10 @@ public class DBUserHandler extends DBConnection {
         try{
             
             db = new DBUserHandler();
-            db.addUser("giovanna", "yoo", "edfcdfv@csdc.it", "eeeeeeeee");
+            //db.addUser("giovanna", "yoo", "edfcdfv@csdc.it", "eeeeeeeee");
             
-            
+            System.out.println(db.getStatusComp());
+            //db.setStatusComp(false);
             //System.out.println(db.checkUser("sdighidibughidi"));
             //System.out.println(db.checkUser("Giovanna"));
             

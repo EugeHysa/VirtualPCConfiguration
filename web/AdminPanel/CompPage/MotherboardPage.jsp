@@ -9,6 +9,7 @@
     </head>
     <body>
         <div class="grid">
+            <a href="MotherboardPage.jsp"></a>
             <div class="header"><h1> Admin Side - Choose Type of Component </h1>
             <%//Success of login
             if ((session.getAttribute("useridadm") == null) || (session.getAttribute("useridadm") == "")) {
@@ -25,6 +26,7 @@
                 <input type="button" value="Hard Disk" name="hdisk" onclick="location.href='HDiskPage.jsp'"/>
                 <input type="button" value="Power Supply" name="powersupply" onclick="location.href='PowerSupplyPage.jsp'"/>
                 <input type="button" value="Case" name="case" onclick="location.href='CasePage.jsp'"/>
+                <input type="button" value="Constraints" name="constraints" onclick="location.href='ConstraintsPage.jsp'"/>
             </div>
             <div class="content">
                 <p>Component Table:</p>
