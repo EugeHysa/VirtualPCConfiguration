@@ -1,3 +1,4 @@
+<%@ page import="DatabaseElements.*"%>
 <%@ page import="JSPElements.*"%>
 <%@ page import="Components.*"%>
 <%@ page language="java" %>
@@ -107,7 +108,7 @@
                 </ul>
                 <!-- Loading CPU components in a table-->
                 <%
-                    Boolean flagAdmin = true;
+                    Boolean flagAdmin = new DBUserHandler().getStatusComp();
                     /*Default TRUE = Compatibilità*/
                     if(flagAdmin == true){
                         out.print(new HTMLTableCreator().createCPU(false, flagAdmin, brand, model));

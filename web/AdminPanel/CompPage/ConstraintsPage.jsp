@@ -7,6 +7,14 @@
 
 <%
     
+    String inputtype = "";
+    String submit = "";
+    
+try{  
+                        if (new DBUserHandler().getStatusComp() == true) {inputtype = "<input type=\"checkbox\" onclick=\"change()\" id=\"status\" name=\"status\" value=\"\" checked>Vincoli</input>";}
+                        if (new DBUserHandler().getStatusComp() == false) { inputtype = "<input type=\"checkbox\" onclick=\"change()\" id=\"status\" name=\"status\" value=\"\" unchecked>Vincoli</input>";}
+                    }catch(SQLException e){}
+    
 %>
 
 <html>
@@ -36,14 +44,10 @@
                 <input type="button" value="Constraints" name="constraints" onclick="location.href='ConstraintsPage.jsp'"/>
             </div>
             <div class="content">
-                <form action="ConstraintsPage.jsp" method="POST">
-                <input type="checkbox" href="ConstraintsPage.jsp" id="status" name="status" value="" <% 
-                    try{  
-                        if (new DBUserHandler().getStatusComp() == true) {out.print("checked");}
-                        if (new DBUserHandler().getStatusComp() == false) {out.print("unchecked");}
-                    }catch(SQLException e){}
-                %>>Vincoli</input>
-                <input type="submit"  onclick="if(document.getElementById("status").checked === false){<%new DBUserHandler().setStatusComp(false); System.out.println("sdfd");%>} if(document.getElementById("status").checked === true){<% new DBUserHandler().setStatusComp(true); System.out.println("fdgf");%>}" value="Aggiorna"/>
+                <form action="../AddPage/EditConstraints.jsp" method="POST">
+                    <input type ="hidden" id="inp" name="inp" />
+                <% out.print(inputtype); %>
+                <input type="submit"  value="Aggiorna"/>
                 </form>
                 
             </div>
@@ -63,4 +67,10 @@
     }
 
     }
+    
+   function change(){
+    if(document.getElementById("status").checked==true) document.getElementById("inp").value = "true";
+    if(document.getElementById("status").checked==false) document.getElementById("inp").value = "false";
+}
+
 </script>
