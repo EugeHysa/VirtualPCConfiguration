@@ -26,6 +26,6 @@ SAVECOD int (5) REFERENCES CustomerLogin(USERSAVE),
 PURCOD int(5) REFERENCES PURCHASES(COD));
 
 
-create table ADMINCONTROL (FLAG binary not null);
-insert into ADMINCONTROL value(0);
+create table ADMINCONTROLS (CPUFLAG binary not null, RAMFLAG binary not null);
+insert into ADMINCONTROLS values(0,0);
 update ADMINCONTROL set FLAG = 1;
