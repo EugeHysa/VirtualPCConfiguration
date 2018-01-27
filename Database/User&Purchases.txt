@@ -28,4 +28,4 @@ PURCOD int(5) REFERENCES PURCHASES(COD));
 
 create table ADMINCONTROLS (CPUFLAG binary not null, RAMFLAG binary not null);
 insert into ADMINCONTROLS values(0,0);
-update ADMINCONTROL set FLAG = 1;
+update ADMINCONTROLS set FLAG = 1;
