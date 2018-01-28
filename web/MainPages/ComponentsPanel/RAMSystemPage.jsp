@@ -111,7 +111,7 @@
             <!-- Loading RAM components in a table-->
             <%
                 Boolean status = new DBUserHandler().getRAMStatusConstr();
-                
+                //
                 ConfigurationSave cs = (ConfigurationSave) session.getAttribute("confsave");
                 //cs.sumPrice(Double.parseDouble(request.getParameter("NEXTPRI")));
                 //System.out.println(cs.getBrand() + " " + cs.getModel() + " " + cs.getPrice());

@@ -139,7 +139,7 @@ public class DBUserHandler extends DBConnection {
             
             db = new DBUserHandler();
             //db.addUser("giovanna", "yoo", "edfcdfv@csdc.it", "eeeeeeeee");
-            
+            //
             System.out.println(db.getCPUStatusConstr());
             //db.setStatusComp(false);
             //System.out.println(db.checkUser("sdighidibughidi"));

@@ -6,7 +6,7 @@
 <%@ page contentType="te3xt7htarset=ISO-8859-5" %>
 
 <%
-    
+    //
     String inputCPUtype = "";
     String inputRAMtype = "";
     String submit = "";

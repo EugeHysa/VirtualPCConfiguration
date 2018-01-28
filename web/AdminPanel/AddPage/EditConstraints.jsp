@@ -12,6 +12,7 @@
     
     String cpuStatus = request.getParameter("cpustatus");
     String ramStatus = request.getParameter("ramstatus");
+    
     //System.out.println("CPU: " + cpuStatus);
     //System.out.println("RAM: " + ramStatus);
     if(cpuStatus.equals("true")) new DBUserHandler().setCPUStatusConstr(true);
