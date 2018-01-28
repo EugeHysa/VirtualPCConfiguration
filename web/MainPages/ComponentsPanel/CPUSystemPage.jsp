@@ -108,7 +108,7 @@
                 </ul>
                 <!-- Loading CPU components in a table-->
                 <%
-                    Boolean flagAdmin = new DBUserHandler().getStatusComp();
+                    Boolean flagAdmin = new DBUserHandler().getCPUStatusConstr();
                     /*Default TRUE = Compatibilità*/
                     if(flagAdmin == true){
                         out.print(new HTMLTableCreator().createCPU(false, flagAdmin, brand, model));

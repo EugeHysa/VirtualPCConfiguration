@@ -53,11 +53,11 @@ public class DBUserHandler extends DBConnection {
         return st;
     }
     
-    public Boolean getStatusComp(){
+    public Boolean getCPUStatusConstr(){
         Boolean status = true;
         
         try{
-            res = mystmt.executeQuery("select FLAG from ADMINCONTROL");
+            res = mystmt.executeQuery("select CPUFLAG from ADMINCONTROLS");
             while(res.next())
             {
                 if(res.getInt(1)==1) status = true;
@@ -72,17 +72,56 @@ public class DBUserHandler extends DBConnection {
         return status;
     }
     
-    public void setStatusComp(Boolean status)
+    public void setCPUStatusConstr(Boolean status)
     {
         try
         {
             if(status == false)
             {
-                mystmt.executeUpdate("update ADMINCONTROL set FLAG = 0");
+                mystmt.executeUpdate("update ADMINCONTROLS set CPUFLAG = 0");
             }
             if(status == true)
             {
-                mystmt.executeUpdate("update ADMINCONTROL set FLAG = 1");
+                mystmt.executeUpdate("update ADMINCONTROLS set CPUFLAG = 1");
+            }
+        }
+        catch(SQLException e)
+        {
+            
+        }
+        
+    }
+    
+        public Boolean getRAMStatusConstr(){
+        Boolean status = true;
+        
+        try{
+            res = mystmt.executeQuery("select RAMFLAG from ADMINCONTROLS");
+            while(res.next())
+            {
+                if(res.getInt(1)==1) status = true;
+                if(res.getInt(1)==0) status = false;   
+            }
+        }
+        catch(SQLException e)
+        {
+            System.out.println(e);
+        }
+        
+        return status;
+    }
+    
+    public void setRAMStatusConstr(Boolean status)
+    {
+        try
+        {
+            if(status == false)
+            {
+                mystmt.executeUpdate("update ADMINCONTROLS set RAMFLAG = 0");
+            }
+            if(status == true)
+            {
+                mystmt.executeUpdate("update ADMINCONTROLS set RAMFLAG = 1");
             }
         }
         catch(SQLException e)
@@ -101,7 +140,7 @@ public class DBUserHandler extends DBConnection {
             db = new DBUserHandler();
             //db.addUser("giovanna", "yoo", "edfcdfv@csdc.it", "eeeeeeeee");
             
-            System.out.println(db.getStatusComp());
+            System.out.println(db.getCPUStatusConstr());
             //db.setStatusComp(false);
             //System.out.println(db.checkUser("sdighidibughidi"));
             //System.out.println(db.checkUser("Giovanna"));

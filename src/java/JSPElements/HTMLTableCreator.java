@@ -124,7 +124,7 @@ public class HTMLTableCreator {
         return output;
     }
 
-    public static String createCPU(Boolean f, String brand, String model)
+    public static String createCPU(Boolean f, Boolean status, String brand, String model)
     {
         String output;
         StringBuilder ss = new StringBuilder();
@@ -136,7 +136,8 @@ public class HTMLTableCreator {
         if(f == true) db.loadCPU(cpu);
 	if(f == false)
         {
-            cpu = db.iSelected2(brand,model);
+            if(status == true) cpu = db.iSelected2(brand,model);
+            if(status == false) db.loadCPU(cpu);
         }
 
         
@@ -198,7 +199,7 @@ public class HTMLTableCreator {
         return output;
     }
     
-    public static String createRAM(Boolean f, String brand, String model)
+    public static String createRAM(Boolean f, Boolean status, String brand, String model)
     {
         String output;
         StringBuilder ss = new StringBuilder();
@@ -210,7 +211,8 @@ public class HTMLTableCreator {
         if(f == true) db.loadRAM(ram);
 	if(f == false)
         {
-            ram = db.isSelected3(brand,model);
+            if(status == true) ram = db.isSelected3(brand,model);
+            if(status == false) db.loadRAM(ram);
         }
 
         

@@ -7,13 +7,33 @@
 
 <%
     
-    String inputtype = "";
+    String inputCPUtype = "";
+    String inputRAMtype = "";
     String submit = "";
     
-try{  
-                        if (new DBUserHandler().getStatusComp() == true) {inputtype = "<input type=\"checkbox\" onclick=\"change()\" id=\"status\" name=\"status\" value=\"\" checked>Vincoli</input>";}
-                        if (new DBUserHandler().getStatusComp() == false) { inputtype = "<input type=\"checkbox\" onclick=\"change()\" id=\"status\" name=\"status\" value=\"\" unchecked>Vincoli</input>";}
-                    }catch(SQLException e){}
+    try
+    {
+        if(new DBUserHandler().getCPUStatusConstr() == true) 
+        {
+            inputCPUtype = "checked";
+        }
+        if(new DBUserHandler().getCPUStatusConstr() == false)
+        {
+            inputCPUtype = "unchecked";
+        }
+        if(new DBUserHandler().getRAMStatusConstr() == true) 
+        {
+            inputRAMtype = "checked";
+        }
+        if(new DBUserHandler().getRAMStatusConstr() == false)
+        {
+            inputRAMtype = "unchecked";
+        }
+    }
+    catch(SQLException e)
+    {
+        out.println("<html> <body> " + e + " </html> </body>");
+    }
     
 %>
 
@@ -45,9 +65,17 @@ try{
             </div>
             <div class="content">
                 <form action="../AddPage/EditConstraints.jsp" method="POST">
-                    <input type ="hidden" id="inp" name="inp" />
-                <% out.print(inputtype); %>
-                <input type="submit"  value="Aggiorna"/>
+                    <input type ="hidden" id="cpustatus" name="cpustatus" />
+                    <input type ="hidden" id="ramstatus" name="ramstatus" />
+                    <p>
+                    <input type="checkbox" onclick="setCPU()" id="CPUFlag" name="CPUFlag" value="" <% out.print(inputCPUtype); %>>CPU Filtering</input>
+                    </p>
+                    <p>
+                    <input type="checkbox" onclick="setRAM()" id="RAMFlag" name="RAMFlag" value="" <% out.print(inputRAMtype); %>>RAM Filtering</input>
+                    </p>
+                    <p>
+                    <input type="submit"  value="Aggiorna"/>
+                    </p>
                 </form>
                 
             </div>
@@ -68,9 +96,13 @@ try{
 
     }
     
-   function change(){
-    if(document.getElementById("status").checked==true) document.getElementById("inp").value = "true";
-    if(document.getElementById("status").checked==false) document.getElementById("inp").value = "false";
-}
+   function setCPU(){
+    if(document.getElementById("CPUFlag").checked==true) document.getElementById("cpustatus").value = "true";
+    if(document.getElementById("CPUFlag").checked==false) document.getElementById("cpustatus").value = "false";
+    }
+   function setRAM(){
+    if(document.getElementById("RAMFlag").checked==true) document.getElementById("ramstatus").value = "true";
+    if(document.getElementById("RAMFlag").checked==false) document.getElementById("ramstatus").value = "false";
+    }
 
 </script>

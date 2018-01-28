@@ -1,5 +1,6 @@
 <%@ page import="JSPElements.*"%>
 <%@ page import="Components.*"%>
+<%@ page import="DatabaseElements.*"%>
 <%@ page language="java" %>
 <%@ page import="java.sql.*" %>
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
@@ -109,10 +110,13 @@
             </ul>
             <!-- Loading RAM components in a table-->
             <%
+                Boolean status = new DBUserHandler().getRAMStatusConstr();
+                
                 ConfigurationSave cs = (ConfigurationSave) session.getAttribute("confsave");
                 //cs.sumPrice(Double.parseDouble(request.getParameter("NEXTPRI")));
                 //System.out.println(cs.getBrand() + " " + cs.getModel() + " " + cs.getPrice());
-                out.print(new HTMLTableCreator().createRAM(false, brand, model));
+                
+                out.print(new HTMLTableCreator().createRAM(false, status, brand, model));
             %>
             <script>
                 var urlForward;

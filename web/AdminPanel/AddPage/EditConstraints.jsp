@@ -9,8 +9,14 @@
 </head>
 
 <%
-    String status = request.getParameter("inp");
-    if(status.equals("true")) new DBUserHandler().setStatusComp(true);
-    if(status.equals("false")) new DBUserHandler().setStatusComp(false);
+    
+    String cpuStatus = request.getParameter("cpustatus");
+    String ramStatus = request.getParameter("ramstatus");
+    //System.out.println("CPU: " + cpuStatus);
+    //System.out.println("RAM: " + ramStatus);
+    if(cpuStatus.equals("true")) new DBUserHandler().setCPUStatusConstr(true);
+    if(cpuStatus.equals("false")) new DBUserHandler().setCPUStatusConstr(false);
+    if(ramStatus.equals("true")) new DBUserHandler().setRAMStatusConstr(true);
+    if(ramStatus.equals("false")) new DBUserHandler().setRAMStatusConstr(false);
 
 %>
