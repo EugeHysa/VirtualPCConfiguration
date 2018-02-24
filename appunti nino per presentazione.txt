@@ -1,0 +1,36 @@
+vmc: in teoria no ma in pratica lo si potrebbe rappresentare
+- DBconnection controller prende dati da una fonte DB e li sposta dove deveno essere visualizzati ArrayList)
+- htmlcreator la view  (fa vedere il risultato)
+- le classi java .loader i model (spiega il funzionamento dei componenti)
+
+architettura a strati: si, client (browser) server(Computer che mette a disposizione il servizio), jsp
+utilizzato il DB da mysql (Giovanna) dati in gioco componenti con attributi e prezzo, dati richiamati in java, modello era utilizziamo jdbc
+quantità non ci interessa compatibilità con DBFilters.
+
+NINO: 
+login logout CustomerLogin table (in db), adminlogin, saves 
+come viene gestita la creazione di un nuovo utente (signup) e la login e il logout tramite session session classi java interessate.
+session, request e response oggetto java 
+
+
+servlet = metodo che stampa pagina html tutto risultato html
+jsp = assomiglia a file html progettare in modo comprensibile e utilizzare metodi e classi java da richiamare nella pagina <% %> metodo restituisce
+una stringa
+
+no servlet perche jsp: è più facile nel programmare, puoi utilizzare java e comunque jsp è server ma scrivi come se fosse html 
+                       e quando compili e esegui la jsp viene tradotta in servlet.
+
+la pagina per la grafica usa il css (linguaggio permette di personalizzare grafica e struttura delle pagine html)
+
+coockie 
+1) livello java oggetto java
+2) livello jsp
+
+concetto: brwoser utilizzano coockie (file di testo) che è presente nella directory come? chiave=valore; chiave=valore;... per ogni attributo 
+esempio brand=asus;....)
+gli utilizziamo per la sidebar  
+
+coockie lato client...ottengo info da server, il coockie si salva il dato e quando voglio accedre al dato lo ottengo direttamente
+perchè salvato e non vado a richiamarlo tramite server.
+
+javascript è un linguaggio di programmazione lato client.
